@@ -8,9 +8,30 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate {
     
-    @IBOutlet weak var moodTable: UITableView!
+    //@IBOutlet weak var moodTable: UITableView!
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 7;
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
+        
+        /*let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        var numDay:Double = 24.0
+        for _ in 0...6 {
+            let moveDate = date.dateByAddingTimeInterval(60*60*numDay)
+            cell.textLabel?.text = String(calendar.component([.Day], fromDate: moveDate))
+            numDay = numDay + 24
+        }*/
+        
+        cell.textLabel?.text = "Hey Bud"
+        
+        return cell
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
