@@ -14,23 +14,44 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" semanticContentAttribute="spatial" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Mood Index" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQm-Qv-aVw">
-                                <rect key="frame" x="35" y="20" width="305" height="77"/>
-                                <fontDescription key="fontDescription" name="GillSans-UltraBold" family="Gill Sans" pointSize="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Mood Index" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQm-Qv-aVw">
+                                <rect key="frame" x="133" y="20" width="335" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="F5P-RP-LBc"/>
+                                    <constraint firstAttribute="height" constant="47" id="eXl-gN-aQM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="38"/>
                                 <color key="textColor" red="0.83137254901960789" green="0.65098039215686276" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rql-dg-8TB">
+                                <rect key="frame" x="133" y="75" width="335" height="466"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="YOG-sY-N56"/>
+                                    <constraint firstAttribute="height" constant="466" id="jEG-sC-Chz"/>
+                                </constraints>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843160629272" green="0.99607843160629272" blue="0.99215686321258545" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iQm-Qv-aVw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cfa-Aa-8hX"/>
+                            <constraint firstItem="Rql-dg-8TB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j9H-iG-f7f"/>
+                            <constraint firstItem="iQm-Qv-aVw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="q7Y-Cg-SrR"/>
+                            <constraint firstItem="Rql-dg-8TB" firstAttribute="top" secondItem="iQm-Qv-aVw" secondAttribute="bottom" constant="8" id="rB9-cG-pLg"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="MoodTable" destination="Rql-dg-8TB" id="HMl-3H-qnm"/>
+                        <outlet property="moodTable" destination="Rql-dg-8TB" id="io3-zH-UoN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305.5" y="401.5"/>
+            <point key="canvasLocation" x="172" y="400"/>
         </scene>
     </scenes>
 </document>
