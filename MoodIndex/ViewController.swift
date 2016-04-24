@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Iterate over the array and get each day
+        // and then add it to the table
         // Do any additional setup after loading the view, typically from a nib.
         /*let date = NSDate()
         let calendar = NSCalendar.currentCalendar()
