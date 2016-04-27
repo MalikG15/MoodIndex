@@ -482,6 +482,7 @@
 				885E82101CCC033B00ED2E74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		885E82111CCC033B00ED2E74 /* Build configuration list for PBXNativeTarget "MoodIndexTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +491,7 @@
 				885E82131CCC033B00ED2E74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		885E82141CCC033B00ED2E74 /* Build configuration list for PBXNativeTarget "MoodIndexUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +500,7 @@
 				885E82161CCC033B00ED2E74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

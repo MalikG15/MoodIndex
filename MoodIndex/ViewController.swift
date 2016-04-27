@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class ViewController: UIViewController, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var moodTable: UITableView!
+    
+    let locationManager = CLLocationManager()
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 7;
@@ -42,12 +46,50 @@ class ViewController: UIViewController, UITableViewDelegate {
         return cell
     }
     
+    /*@IBAction func getLocationConfirmation(sender: UIButton) {
+        let alert = UIAlertController(title: "Location Permission", message: "This app needs your permission to access your location")
+        
+        
+    
+    }*/
+    
     override func viewDidLoad() {
         super.viewDidLoad()
- }
+        
+        // Ask for Authorisation from the User.
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+        }
+        
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        var userLocation:CLLocation = locations[0] as! CLLocation
+        let long = userLocation.coordinate.longitude;
+        let lat = userLocation.coordinate.latitude;
+        print("locations = \(long) and \(lat)")
+        /*let location:CLLocation = locations[locations.count-1] as! CLLocation
+        
+        if (location.horizontalAccuracy > 0) {
+            self.locationManager.stopUpdatingLocation()
+            print(location.coordinate, terminator: "")
+            //updateWeatherInfo(location.coordinate.latitude, longitude: location.coordinate.longitude)
+        }*/
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
 }
