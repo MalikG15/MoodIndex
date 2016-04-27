@@ -17,7 +17,9 @@ class ViewController: UIViewController, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
+        //let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "MoodCell")
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("MoodCell", forIndexPath: indexPath)
         
         var next7DaysDates = [String]()
         
@@ -34,9 +36,8 @@ class ViewController: UIViewController, UITableViewDelegate {
             numDay = numDay + 24
         }
         
-        cell.textLabel?.text = next7DaysDates[indexPath.row]
-        
-        //cell.imageView?.setValue(<#T##value: AnyObject?##AnyObject?#>, forKeyPath: <#T##String#>)
+        cell.detailTextLabel?.text = next7DaysDates[indexPath.row]
+        //cell.detailTextLabel?.text = "hello"
         
         return cell
     }
