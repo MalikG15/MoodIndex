@@ -73,7 +73,7 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
             long = userLocation.coordinate.longitude;
             lat = userLocation.coordinate.latitude;
             print("locations = \(long) and \(lat)")
-            let weather = Weather(URL: "https://api.forecast.io/forecast/8fdc70a7aade55aadd377e9c1f9bc2c4/37.8267,-122.423")
+            let weather = Weather(URL: "https://api.forecast.io/forecast/8fdc70a7aade55aadd377e9c1f9bc2c4/\(lat),\(long)")
         }
     }
     
