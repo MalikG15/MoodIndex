@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Weather {
     //var weather: String = ""
@@ -52,11 +53,17 @@ class Weather {
         task.resume()
     }
     
-    func imageForWeather(cloudCover: String, precipPossibility: String, maxTemp: String) {
-        if (precipPossibility > ".5") {
-            print("hello")
+    func imageForWeather(cloudCover: Double, precipPossibility: Double) -> UIImage? {
+        if (precipPossibility >= 0.5) {
+            return UIImage(named: "rain.png")
         }
-        
+        else if (cloudCover < 0.5) {
+            return UIImage(named: "sun.png")
+        }
+        else if (cloudCover >=  0.5) {
+            return UIImage(named: "bad-weather.png")
+        }
+        return nil;
     }
 }
 

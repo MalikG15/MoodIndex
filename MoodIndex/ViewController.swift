@@ -55,6 +55,14 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let temperaturePreference = NSUserDefaults.standardUserDefaults().objectForKey("temperaturePreference")
+        
+        /*if (temperaturePreference == nil) {
+            let ViewController1: PreferencesController = PreferencesController()
+            self.presentViewController(ViewController1, animated: true, completion: nil)
+        }*/
+        
+        
         // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()
         
@@ -63,7 +71,7 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
         }
@@ -72,7 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if (long == 0.0 && lat == 0.0) {
-            var userLocation:CLLocation = locations[0] as! CLLocation
+            let userLocation:CLLocation = locations[0]
             long = userLocation.coordinate.longitude;
             lat = userLocation.coordinate.latitude;
             print("locations = \(long) and \(lat)")

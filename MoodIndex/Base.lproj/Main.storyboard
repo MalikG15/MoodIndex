@@ -15,28 +15,18 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" semanticContentAttribute="spatial" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Mood Index" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQm-Qv-aVw">
-                                <rect key="frame" x="133" y="20" width="335" height="47"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="335" id="bbC-Cw-fdf"/>
-                                    <constraint firstAttribute="height" constant="47" id="eYL-US-Tdc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="38"/>
-                                <color key="textColor" red="0.83137254901960789" green="0.65098039215686276" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" sectionHeaderHeight="29" sectionFooterHeight="29" translatesAutoresizingMaskIntoConstraints="NO" id="Rql-dg-8TB">
-                                <rect key="frame" x="0.0" y="75" width="600" height="525"/>
+                                <rect key="frame" x="-4" y="75" width="383" height="592"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MoodCell" rowHeight="80" id="ixx-jw-ypq">
-                                        <rect key="frame" x="0.0" y="29" width="600" height="80"/>
+                                        <rect key="frame" x="0.0" y="29" width="383" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ixx-jw-ypq" id="4op-ix-648">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voN-aD-BLc">
@@ -73,19 +63,32 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="waJ-Mr-git"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7W-eZ-PKb">
+                                <rect key="frame" x="-4" y="20" width="383" height="44"/>
+                                <items>
+                                    <navigationItem title="Mood Index" id="vyA-ct-HMY">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="BVg-D4-JgV">
+                                            <connections>
+                                                <segue destination="26g-ay-QmF" kind="show" id="dbo-D4-o5U"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843160629272" green="0.99607843160629272" blue="0.99215686321258545" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Rql-dg-8TB" firstAttribute="top" secondItem="iQm-Qv-aVw" secondAttribute="bottom" constant="8" id="0pq-5c-Kte"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Rql-dg-8TB" secondAttribute="bottom" id="Ec0-ga-KQo"/>
-                            <constraint firstItem="Rql-dg-8TB" firstAttribute="top" secondItem="iQm-Qv-aVw" secondAttribute="bottom" constant="8" id="FRy-o6-LDc"/>
-                            <constraint firstItem="Rql-dg-8TB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P3G-aa-01k"/>
-                            <constraint firstItem="iQm-Qv-aVw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZNy-9L-bTx"/>
-                            <constraint firstItem="iQm-Qv-aVw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="cLP-2r-335"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Rql-dg-8TB" secondAttribute="trailing" constant="-20" id="dfH-04-cEk"/>
-                            <constraint firstItem="Rql-dg-8TB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="neI-an-ZEK"/>
+                            <constraint firstItem="Rql-dg-8TB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="9GQ-oA-hUP"/>
+                            <constraint firstItem="h7W-eZ-PKb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="TPs-Ow-4bN"/>
+                            <constraint firstItem="Rql-dg-8TB" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottomMargin" id="fZX-wc-NUH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rql-dg-8TB" secondAttribute="trailing" constant="-20" id="gkr-uh-hn3"/>
+                            <constraint firstItem="Rql-dg-8TB" firstAttribute="top" secondItem="h7W-eZ-PKb" secondAttribute="bottom" constant="11" id="jXn-Jq-5ux"/>
+                            <constraint firstItem="h7W-eZ-PKb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="klz-ij-pN1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="h7W-eZ-PKb" secondAttribute="trailing" constant="-20" id="sZz-mo-huP"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="MoodTable" destination="Rql-dg-8TB" id="HMl-3H-qnm"/>
                         <outlet property="moodTable" destination="Rql-dg-8TB" id="io3-zH-UoN"/>
@@ -93,7 +96,88 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-874" y="115"/>
+            <point key="canvasLocation" x="-2325" y="-384"/>
+        </scene>
+        <!--Preferences Controller-->
+        <scene sceneID="a4I-Vx-u7V">
+            <objects>
+                <viewController id="26g-ay-QmF" customClass="PreferencesController" customModule="MoodIndex" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ckr-hA-d0B"/>
+                        <viewControllerLayoutGuide type="bottom" id="IYy-pD-nkA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ya6-Fd-sgh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How much do you like it when it rains?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wu3-15-Lb9">
+                                <rect key="frame" x="15" y="96" width="340" height="57"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8b8-EV-1HI">
+                                <rect key="frame" x="13" y="175" width="342" height="31"/>
+                                <color key="tintColor" red="0.047058824450000002" green="0.91372549530000002" blue="0.3058823645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6nQ-10-SAJ">
+                                <rect key="frame" x="13" y="310" width="342" height="31"/>
+                                <color key="tintColor" red="0.047058824450000002" green="0.91372549530000002" blue="0.3058823645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What temperature do you prefer outside?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCk-7i-5lY">
+                                <rect key="frame" x="15" y="362" width="338" height="68"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cold" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylj-BG-HzI">
+                                <rect key="frame" x="20" y="438" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jg-os-e2r">
+                                <rect key="frame" x="20" y="568" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Update Your Mood Index"/>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6s8-ju-ZCd">
+                                <rect key="frame" x="16" y="488" width="339" height="31"/>
+                                <color key="tintColor" red="0.047058824450000002" green="0.91372549530000002" blue="0.3058823645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hot" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsC-nH-2Rh">
+                                <rect key="frame" x="288" y="438" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" red="1" green="0.1294117719" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TOc-3i-Mzo">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Weather Preferences" id="xDr-hO-pvh">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0oI-FR-VXv">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="xLX-MT-NHo"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How much do you like it when it's cloudy?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPh-pH-fJq">
+                                <rect key="frame" x="15" y="228" width="338" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="suL-cR-tjX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1636.5" y="-384.5"/>
         </scene>
     </scenes>
 </document>
