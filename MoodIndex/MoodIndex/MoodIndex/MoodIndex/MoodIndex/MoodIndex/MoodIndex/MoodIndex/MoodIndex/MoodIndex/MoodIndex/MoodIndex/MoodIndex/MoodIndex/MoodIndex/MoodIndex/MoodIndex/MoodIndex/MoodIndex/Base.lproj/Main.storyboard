@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MoodIndex" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" semanticContentAttribute="spatial" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Mood Index" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQm-Qv-aVw">
+                                <rect key="frame" x="133" y="20" width="335" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="bbC-Cw-fdf"/>
+                                    <constraint firstAttribute="height" constant="47" id="eYL-US-Tdc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="38"/>
+                                <color key="textColor" red="0.83137254901960789" green="0.65098039215686276" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" sectionHeaderHeight="29" sectionFooterHeight="29" translatesAutoresizingMaskIntoConstraints="NO" id="Rql-dg-8TB">
+                                <rect key="frame" x="0.0" y="75" width="600" height="525"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MoodCell" rowHeight="80" id="ixx-jw-ypq">
+                                        <rect key="frame" x="0.0" y="29" width="600" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ixx-jw-ypq" id="4op-ix-648">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voN-aD-BLc">
+                                                    <rect key="frame" x="95" y="8" width="65" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgN-Hp-RiF">
+                                                    <rect key="frame" x="95" y="30" width="31" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="idZ-Xu-R2O">
+                                                    <rect key="frame" x="8" y="0.0" width="79" height="58.5"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="103" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="92e-zy-3K1">
+                                                    <rect key="frame" x="168" y="0.0" width="113" height="58.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mood" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="104" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqu-A8-6D3">
+                                                    <rect key="frame" x="202" y="58" width="44" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="TtK-Fc-hwe"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="waJ-Mr-git"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99607843160629272" green="0.99607843160629272" blue="0.99215686321258545" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Rql-dg-8TB" firstAttribute="top" secondItem="iQm-Qv-aVw" secondAttribute="bottom" constant="8" id="0pq-5c-Kte"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Rql-dg-8TB" secondAttribute="bottom" id="Ec0-ga-KQo"/>
+                            <constraint firstItem="Rql-dg-8TB" firstAttribute="top" secondItem="iQm-Qv-aVw" secondAttribute="bottom" constant="8" id="FRy-o6-LDc"/>
+                            <constraint firstItem="Rql-dg-8TB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P3G-aa-01k"/>
+                            <constraint firstItem="iQm-Qv-aVw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZNy-9L-bTx"/>
+                            <constraint firstItem="iQm-Qv-aVw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="cLP-2r-335"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rql-dg-8TB" secondAttribute="trailing" constant="-20" id="dfH-04-cEk"/>
+                            <constraint firstItem="Rql-dg-8TB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="neI-an-ZEK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="MoodTable" destination="Rql-dg-8TB" id="HMl-3H-qnm"/>
+                        <outlet property="moodTable" destination="Rql-dg-8TB" id="io3-zH-UoN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-874" y="115"/>
+        </scene>
+    </scenes>
+</document>

@@ -14,6 +14,9 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
     
     @IBOutlet weak var moodTable: UITableView!
     
+    var lat: CLLocationDegrees = 0.0
+    var long: CLLocationDegrees = 0.0
+    
     let locationManager = CLLocationManager()
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,25 +42,18 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
             next7DaysDates.append(tableDate)
             numDay = numDay + 24
         }
-        
+ 
         cell.detailTextLabel?.text = next7DaysDates[indexPath.row]
         //cell.detailTextLabel?.text = "hello"
         
         return cell
     }
     
-    /*@IBAction func getLocationConfirmation(sender: UIButton) {
-        let alert = UIAlertController(title: "Location Permission", message: "This app needs your permission to access your location")
-        
-        
-    
-    }*/
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Ask for Authorisation from the User.
-        self.locationManager.requestAlwaysAuthorization()
+        //self.locationManager.requestAlwaysAuthorization()
         
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
@@ -72,17 +68,13 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        var userLocation:CLLocation = locations[0] as! CLLocation
-        let long = userLocation.coordinate.longitude;
-        let lat = userLocation.coordinate.latitude;
-        print("locations = \(long) and \(lat)")
-        /*let location:CLLocation = locations[locations.count-1] as! CLLocation
-        
-        if (location.horizontalAccuracy > 0) {
-            self.locationManager.stopUpdatingLocation()
-            print(location.coordinate, terminator: "")
-            //updateWeatherInfo(location.coordinate.latitude, longitude: location.coordinate.longitude)
-        }*/
+        if (long == 0.0 && lat == 0.0) {
+            var userLocation:CLLocation = locations[0] as! CLLocation
+            long = userLocation.coordinate.longitude;
+            lat = userLocation.coordinate.latitude;
+            print("locations = \(long) and \(lat)")
+            let weather = Weather(URL: "https://api.forecast.io/forecast/8fdc70a7aade55aadd377e9c1f9bc2c4/37.8267,-122.423")
+        }
     }
     
 
