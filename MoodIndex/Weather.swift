@@ -10,9 +10,9 @@ import Foundation
 
 class Weather {
     //var weather: String = ""
-    var tempData = [AnyObject]()
-    var cloudData = [AnyObject]()
-    var precipData = [AnyObject]()
+    var tempData = [Double]()
+    var cloudData = [Double]()
+    var precipData = [Double]()
     
     init(URL: String) {
         let requestURL: NSURL = NSURL(string: URL)!
@@ -35,10 +35,12 @@ class Weather {
                                     print("JSON not available to be parsed.")
                                     return
                             }
-                            //print(dailyDataforDay["precipProbability"]!)
-                            self.tempData.append(dailyDataforDay["apparentTemperatureMax"]!)
-                            self.cloudData.append(dailyDataforDay["cloudCover"]!)
-                            self.precipData.append(dailyDataforDay["precipProbability"]!)
+                            //print(String(dailyDataforDay["precipProbability"]!))
+                            //print(String(dailyDataforDay["cloudCover"]!))
+                            //print(String(dailyDataforDay["apparentTemperatureMax"]!))
+                            self.tempData.append(dailyDataforDay["apparentTemperatureMax"] as! Double!)
+                            self.cloudData.append(dailyDataforDay["cloudCover"] as! Double!)
+                            self.precipData.append(dailyDataforDay["precipProbability"] as! Double!)
                         }
                      }
                     catch {
@@ -48,6 +50,13 @@ class Weather {
             }
         }
         task.resume()
+    }
+    
+    func imageForWeather(cloudCover: String, precipPossibility: String, maxTemp: String) {
+        if (precipPossibility > ".5") {
+            print("hello")
+        }
+        
     }
 }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8856973A1CD15592005FCB34 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885697391CD15592005FCB34 /* Weather.swift */; };
+		8856973C1CD1D8F9005FCB34 /* Pics for MoodIndex in Resources */ = {isa = PBXBuildFile; fileRef = 8856973B1CD1D8F9005FCB34 /* Pics for MoodIndex */; };
 		885E81EA1CCC033B00ED2E74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E81E91CCC033B00ED2E74 /* AppDelegate.swift */; };
 		885E81EC1CCC033B00ED2E74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E81EB1CCC033B00ED2E74 /* ViewController.swift */; };
 		885E81EF1CCC033B00ED2E74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 885E81ED1CCC033B00ED2E74 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		885697391CD15592005FCB34 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		8856973B1CD1D8F9005FCB34 /* Pics for MoodIndex */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Pics for MoodIndex"; sourceTree = "<group>"; };
 		885E81E61CCC033B00ED2E74 /* MoodIndex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodIndex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		885E81E91CCC033B00ED2E74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		885E81EB1CCC033B00ED2E74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		885E81E81CCC033B00ED2E74 /* MoodIndex */ = {
 			isa = PBXGroup;
 			children = (
+				8856973B1CD1D8F9005FCB34 /* Pics for MoodIndex */,
 				885E81E91CCC033B00ED2E74 /* AppDelegate.swift */,
 				885E81EB1CCC033B00ED2E74 /* ViewController.swift */,
 				885E81ED1CCC033B00ED2E74 /* Main.storyboard */,
@@ -236,6 +239,7 @@
 				885E81F41CCC033B00ED2E74 /* LaunchScreen.storyboard in Resources */,
 				885E81F11CCC033B00ED2E74 /* Assets.xcassets in Resources */,
 				885E81EF1CCC033B00ED2E74 /* Main.storyboard in Resources */,
+				8856973C1CD1D8F9005FCB34 /* Pics for MoodIndex in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,9 +13,12 @@ import CoreLocation
 class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var moodTable: UITableView!
-    
+
     var lat: CLLocationDegrees = 0.0
     var long: CLLocationDegrees = 0.0
+    
+    var weather: Weather?
+    
     
     let locationManager = CLLocationManager()
     
@@ -53,7 +56,7 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
         super.viewDidLoad()
         
         // Ask for Authorisation from the User.
-        //self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestAlwaysAuthorization()
         
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
@@ -73,7 +76,7 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
             long = userLocation.coordinate.longitude;
             lat = userLocation.coordinate.latitude;
             print("locations = \(long) and \(lat)")
-            let weather = Weather(URL: "https://api.forecast.io/forecast/8fdc70a7aade55aadd377e9c1f9bc2c4/\(lat),\(long)")
+            weather = Weather(URL: "https://api.forecast.io/forecast/8fdc70a7aade55aadd377e9c1f9bc2c4/\(lat),\(long)")
         }
     }
     
@@ -82,6 +85,5 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
 }
