@@ -111,19 +111,19 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
         }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    /*func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedRow = indexPath
-    }
+    }*/
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        if (segue.identifier == "MoreVariables") {
-            var svc: MoreVariablesController = segue!.destinationViewController as MoreVariablesController
+    /*override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject!) {
+        if (segue!.identifier == "MoreVariables") {
+            let svc = segue!.destinationViewController as! MoreVariablesController
             
             svc.toPass = "hi"
             
         }
-    }
+    }*/
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -9,7 +9,7 @@
         <!--AddMoreVariables-->
         <scene sceneID="EnL-TW-yAN">
             <objects>
-                <viewController title="AddMoreVariables" id="TQ0-Pc-e46" customClass="MoreVariablesController" sceneMemberID="viewController">
+                <viewController title="AddMoreVariables" id="TQ0-Pc-e46" customClass="MoreVariablesController" customModule="MoodIndex" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pv4-r1-WEe"/>
                         <viewControllerLayoutGuide type="bottom" id="Sgu-mv-MWC"/>
@@ -42,7 +42,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MoodIndex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MoodIndex" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -131,12 +131,12 @@
         <!--WeatherPreferences-->
         <scene sceneID="a4I-Vx-u7V">
             <objects>
-                <viewController title="WeatherPreferences" id="26g-ay-QmF" customClass="PreferencesController" customModule="MoodIndex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="WeatherPreferences" id="26g-ay-QmF" customClass="PreferencesController" customModule="MoodIndex" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ckr-hA-d0B"/>
                         <viewControllerLayoutGuide type="bottom" id="IYy-pD-nkA"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ya6-Fd-sgh" customClass="UserPreferences">
+                    <view key="view" contentMode="scaleToFill" id="Ya6-Fd-sgh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -171,15 +171,6 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jg-os-e2r">
-                                <rect key="frame" x="20" y="560" width="335" height="46"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="Update Your Mood Index!"/>
-                                <connections>
-                                    <action selector="updateIndex:" destination="26g-ay-QmF" eventType="touchUpInside" id="kbW-9n-uCm"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="j81-Ab-Ta0"/>
-                                </connections>
-                            </button>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="6s8-ju-ZCd">
                                 <rect key="frame" x="15" y="506" width="339" height="31"/>
                                 <color key="tintColor" red="0.047058824450000002" green="0.91372549530000002" blue="0.3058823645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -232,6 +223,15 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jg-os-e2r">
+                                <rect key="frame" x="17" y="557" width="335" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Update Your Mood Index!"/>
+                                <connections>
+                                    <action selector="updateIndex:" destination="26g-ay-QmF" eventType="touchUpInside" id="kbW-9n-uCm"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="j81-Ab-Ta0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -249,6 +249,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="TXC-SN-xM5"/>
+        <segue reference="xLX-MT-NHo"/>
     </inferredMetricsTieBreakers>
 </document>

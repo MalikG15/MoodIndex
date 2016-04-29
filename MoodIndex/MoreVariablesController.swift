@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MoreVariables: UIViewController {
+class MoreVariablesController: UIViewController {
     
     var toPass: String?
 
