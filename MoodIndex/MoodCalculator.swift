@@ -12,12 +12,16 @@ import UIKit
 
 class MoodCalculator {
     
-    var mood: [String : Int]?
+    var mood = [String : Int]()
     var baseIndex: Int = 30
 
     /*init(precipPreference: Int, cloudPreference: Int, tempPreference: Int, otherFactors: [String : Int]?) {
        //if ()
     }*/
+    
+    //init() {
+        
+    //}
     
     func calculateMood(date: String, precipData: Double, cloudData: Double, tempData: Double, otherFactors: [String : Int]?) -> UIImage? {
         let rainPreference = Int(NSUserDefaults.standardUserDefaults().objectForKey("rainPreference") as! NSNumber!)
@@ -60,7 +64,7 @@ class MoodCalculator {
                 baseIndex + cloudPreference
             }
         }
-        else if (precipData < 0.5) {
+        else if (cloudData < 0.5) {
             if (cloudPreference < 5) {
                 baseIndex + cloudPreference
             }
@@ -99,28 +103,28 @@ class MoodCalculator {
             }
         }
         
-        mood![date] = baseIndex
+        mood[date] = baseIndex
         
         if (baseIndex <= sections) {
-            return UIImage(named: "very_sad.png")!
+            return UIImage(named: "very_sad.jpg")!
         }
         else if (baseIndex < (sections*2)) {
-            return UIImage(named: "sad.png")!
+            return UIImage(named: "sad.jpg")!
         }
         else if (baseIndex == (sections*2)) {
-            return UIImage(named: "neutral.png")!
+            return UIImage(named: "neutral.jpg")!
         }
         else if (baseIndex <= (sections*3)) {
-            return UIImage(named: "happy.png")!
+            return UIImage(named: "happy.jpg")!
         }
         else {
-            return UIImage(named: "very_happy.png")!
+            return UIImage(named: "very_happy.jpg")!
         }
     
     }
     
     func returnMood() -> [String : Int] {
-        return self.mood!
+        return self.mood
     }
     
     func checkIndexNegative(index: Int) {

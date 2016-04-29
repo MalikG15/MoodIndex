@@ -13,7 +13,6 @@
 		885697421CD1E797005FCB34 /* bad-weather.png in Resources */ = {isa = PBXBuildFile; fileRef = 885697411CD1E797005FCB34 /* bad-weather.png */; };
 		885697441CD1E7B0005FCB34 /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 885697431CD1E7B0005FCB34 /* clouds.png */; };
 		885697461CD279FC005FCB34 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885697451CD279FC005FCB34 /* CoreLocation.framework */; };
-		885697481CD27E41005FCB34 /* UserPreferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 885697471CD27E41005FCB34 /* UserPreferences.storyboard */; };
 		8856974A1CD28601005FCB34 /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885697491CD28601005FCB34 /* PreferencesController.swift */; };
 		8856974C1CD2CD3E005FCB34 /* MoodCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8856974B1CD2CD3E005FCB34 /* MoodCalculator.swift */; };
 		8856974E1CD2FD60005FCB34 /* very_sad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8856974D1CD2FD60005FCB34 /* very_sad.jpg */; };
@@ -54,7 +53,6 @@
 		885697411CD1E797005FCB34 /* bad-weather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bad-weather.png"; path = "Pics for MoodIndex/bad-weather.png"; sourceTree = "<group>"; };
 		885697431CD1E7B0005FCB34 /* clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clouds.png; path = "Pics for MoodIndex/clouds.png"; sourceTree = "<group>"; };
 		885697451CD279FC005FCB34 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		885697471CD27E41005FCB34 /* UserPreferences.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserPreferences.storyboard; sourceTree = "<group>"; };
 		885697491CD28601005FCB34 /* PreferencesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
 		8856974B1CD2CD3E005FCB34 /* MoodCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodCalculator.swift; sourceTree = "<group>"; };
 		8856974D1CD2FD60005FCB34 /* very_sad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = very_sad.jpg; path = "Pics for MoodIndex/Yellow-smileys-collection/very_sad.jpg"; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 				885E81F21CCC033B00ED2E74 /* LaunchScreen.storyboard */,
 				885E81F51CCC033B00ED2E74 /* Info.plist */,
 				885697391CD15592005FCB34 /* Weather.swift */,
-				885697471CD27E41005FCB34 /* UserPreferences.storyboard */,
 				885697491CD28601005FCB34 /* PreferencesController.swift */,
 				8856974B1CD2CD3E005FCB34 /* MoodCalculator.swift */,
 			);
@@ -276,7 +273,6 @@
 				8856974E1CD2FD60005FCB34 /* very_sad.jpg in Resources */,
 				885697401CD1E72F005FCB34 /* sun.png in Resources */,
 				885E81F41CCC033B00ED2E74 /* LaunchScreen.storyboard in Resources */,
-				885697481CD27E41005FCB34 /* UserPreferences.storyboard in Resources */,
 				8856973E1CD1E6E0005FCB34 /* rain.png in Resources */,
 				885697501CD2FD67005FCB34 /* very_happy.jpg in Resources */,
 				885697561CD2FD79005FCB34 /* happy.jpg in Resources */,

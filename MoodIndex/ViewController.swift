@@ -31,22 +31,59 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
         
         let cell = tableView.dequeueReusableCellWithIdentifier("MoodCell", forIndexPath: indexPath)
         
-        var next7DaysDates = [String]()
+        //var next7DaysDates = [String]()
+        
+        var calculator: MoodCalculator = MoodCalculator()
         
         let date = NSDate()
         let calendar = NSCalendar.currentCalendar()
-        var numDay:Double = 24.0
-        for _ in 0...6 {
+        var numDay:Double = 24.0 * Double(indexPath.row)
+        //for _ in 0...6 {
             var tableDate = ""
             let moveDate = date.dateByAddingTimeInterval(60*60*numDay)
-            tableDate += String(calendar.component([.Month], fromDate: moveDate)) + " - "
-            tableDate += String(calendar.component([.Day], fromDate: moveDate)) + " - "
+            tableDate += String(calendar.component([.Month], fromDate: moveDate)) + "-"
+            tableDate += String(calendar.component([.Day], fromDate: moveDate)) + "-"
             tableDate += String(calendar.component([.Year], fromDate: moveDate))
-            next7DaysDates.append(tableDate)
-            numDay = numDay + 24
+            //next7DaysDates.append(tableDate)
+       // }
+        if let weatherData = self.weather {
+            if (weatherData.cloudData.count == 7) {
+                if let imageForWeather = cell.viewWithTag(100) as? UIImageView {
+                    imageForWeather.image = weatherData.imageForWeather(weatherData.cloudData[indexPath.row], precipPossibility:weatherData.precipData[indexPath.row])
+                }
+                if let weatherDescription = cell.viewWithTag(101) as? UILabel {
+                    weatherDescription.text = weatherData.wordForWeather(weatherData.tempData[indexPath.row])
+                }
+                if let moodPicture = cell.viewWithTag(102) as? UIImageView {
+                    moodPicture.image = calculator.calculateMood(tableDate, precipData: weatherData.precipData[indexPath.row], cloudData: weatherData.cloudData[indexPath.row], tempData: weatherData.tempData[indexPath.row], otherFactors: nil)
+                }
+                if let moodDescription = cell.viewWithTag(103) as? UILabel {
+                    moodDescription.text = tableDate
+                }
+            /*else {
+                print("NOOO")
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    tableView.reloadData()
+                })
+            }*/
+            }
+            else {
+                print("NOOO")
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    tableView.reloadData()
+                })
+            }
+            
         }
+        else {
+            print("HIII")
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                tableView.reloadData()
+            })
+        }
+        
  
-        cell.detailTextLabel?.text = next7DaysDates[indexPath.row]
+        //cell.detailTextLabel?.text = next7DaysDates[indexPath.row]
         //cell.detailTextLabel?.text = "hello"
         
         return cell

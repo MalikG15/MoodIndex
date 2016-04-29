@@ -68,5 +68,20 @@ class Weather {
         }
         return nil
     }
+    
+    func wordForWeather(temp: Double) -> String? {
+        if (temp < 25) {
+            return "Very Cold"
+        }
+        else if (temp < 50) {
+            return "Cold"
+        }
+        else if (temp <= 80) {
+            return "Warm"
+        }
+        else {
+            return "Hot"
+        }
+    }
 }
 

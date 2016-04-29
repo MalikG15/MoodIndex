@@ -19,20 +19,20 @@ class PreferencesController: UIViewController {
     
     @IBOutlet weak var cloudPreference: UISlider!
     
-    
     @IBOutlet weak var temperaturePreference: UISlider!
     
-    @IBAction func preferencesSubmit(sender: AnyObject) {
+    
+    @IBAction func updateIndex(sender: AnyObject) {
         rainPreferenceValue = Int(rainPreference.value)
         cloudPreferenceValue = Int(cloudPreference.value)
         temperaturePreferenceValue = Int(temperaturePreference.value)
         NSUserDefaults.standardUserDefaults().setObject(rainPreferenceValue, forKey: "rainPreference")
         NSUserDefaults.standardUserDefaults().setObject(cloudPreferenceValue, forKey: "cloudPreference")
         NSUserDefaults.standardUserDefaults().setObject(temperaturePreferenceValue, forKey: "temperaturePreference")
-        let ViewController1: ViewController = ViewController()
-        self.presentViewController(ViewController1, animated: true, completion: nil)
+        //let ViewController1: ViewController = ViewController()
+        //self.presentViewController(ViewController1, animated: true, completion: nil)
     }
-    
+     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
