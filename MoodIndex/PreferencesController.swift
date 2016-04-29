@@ -14,18 +14,17 @@ class PreferencesController: UIViewController {
     var rainPreferenceValue: Int?
     var cloudPreferenceValue: Int?
     var temperaturePreferenceValue: Int?
-
+    
     @IBOutlet weak var rainPreference: UISlider!
-
-    @IBOutlet weak var cloudPreferences: UISlider!
+    
+    @IBOutlet weak var cloudPreference: UISlider!
     
     
     @IBOutlet weak var temperaturePreference: UISlider!
     
-    
     @IBAction func preferencesSubmit(sender: AnyObject) {
         rainPreferenceValue = Int(rainPreference.value)
-        cloudPreferenceValue = Int(cloudPreferences.value)
+        cloudPreferenceValue = Int(cloudPreference.value)
         temperaturePreferenceValue = Int(temperaturePreference.value)
         NSUserDefaults.standardUserDefaults().setObject(rainPreferenceValue, forKey: "rainPreference")
         NSUserDefaults.standardUserDefaults().setObject(cloudPreferenceValue, forKey: "cloudPreference")

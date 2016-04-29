@@ -106,7 +106,7 @@
                         <viewControllerLayoutGuide type="top" id="Ckr-hA-d0B"/>
                         <viewControllerLayoutGuide type="bottom" id="IYy-pD-nkA"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ya6-Fd-sgh">
+                    <view key="view" contentMode="scaleToFill" id="Ya6-Fd-sgh" customClass="UserPreferences">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -116,11 +116,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8b8-EV-1HI">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="8b8-EV-1HI">
                                 <rect key="frame" x="13" y="175" width="342" height="31"/>
                                 <color key="tintColor" red="0.047058824450000002" green="0.91372549530000002" blue="0.3058823645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6nQ-10-SAJ">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="6nQ-10-SAJ">
                                 <rect key="frame" x="13" y="310" width="342" height="31"/>
                                 <color key="tintColor" red="0.047058824450000002" green="0.91372549530000002" blue="0.3058823645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </slider>
@@ -141,7 +141,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Update Your Mood Index"/>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6s8-ju-ZCd">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="6s8-ju-ZCd">
                                 <rect key="frame" x="16" y="488" width="339" height="31"/>
                                 <color key="tintColor" red="0.047058824450000002" green="0.91372549530000002" blue="0.3058823645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </slider>
@@ -174,10 +174,15 @@
                     </view>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="cloudPreference" destination="6nQ-10-SAJ" id="dLY-SB-WyF"/>
+                        <outlet property="rainPreference" destination="8b8-EV-1HI" id="oDy-QW-UYR"/>
+                        <outlet property="temperaturePreference" destination="6s8-ju-ZCd" id="0Rb-5Q-tMK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="suL-cR-tjX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1636.5" y="-384.5"/>
+            <point key="canvasLocation" x="-1584.5" y="-394.5"/>
         </scene>
     </scenes>
 </document>

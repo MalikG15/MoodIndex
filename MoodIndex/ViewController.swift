@@ -55,7 +55,7 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let temperaturePreference = NSUserDefaults.standardUserDefaults().objectForKey("temperaturePreference")
+        //let temperaturePreference = NSUserDefaults.standardUserDefaults().objectForKey("temperaturePreference")
         
         /*if (temperaturePreference == nil) {
             let ViewController1: PreferencesController = PreferencesController()

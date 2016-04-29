@@ -50,6 +50,9 @@ class Weather {
                 }
             }
         }
+        //else {
+          //  print("There is something wrong with the internet connection")
+        //}
         task.resume()
     }
     
@@ -63,7 +66,7 @@ class Weather {
         else if (cloudCover >=  0.5) {
             return UIImage(named: "bad-weather.png")
         }
-        return nil;
+        return nil
     }
 }
 
