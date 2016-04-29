@@ -113,6 +113,11 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="8b8-EV-1HI">
                                 <rect key="frame" x="13" y="175" width="342" height="31"/>
                                 <color key="tintColor" red="0.047058824450000002" green="0.91372549530000002" blue="0.3058823645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="Changes:" destination="26g-ay-QmF" eventType="touchUpOutside" id="7re-ov-Oou"/>
+                                    <action selector="saveChangedValue:" destination="26g-ay-QmF" eventType="touchUpOutside" id="MIB-e0-MVV"/>
+                                    <action selector="savedChangedValue:" destination="26g-ay-QmF" eventType="touchUpOutside" id="Tu5-YT-Bkv"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="6nQ-10-SAJ">
                                 <rect key="frame" x="13" y="310" width="342" height="31"/>
@@ -180,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="suL-cR-tjX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1584.5" y="-394.5"/>
+            <point key="canvasLocation" x="-1430.5" y="-440.5"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

@@ -22,19 +22,30 @@ class PreferencesController: UIViewController {
     @IBOutlet weak var temperaturePreference: UISlider!
     
     
+    /*@IBAction func saveChangedValue(sender: UISlider) {
+        
+    }*/
+    
+    @IBAction func Changes(sender: UISlider) {
+        NSUserDefaults.standardUserDefaults().setFloat(sender.value, forKey: "sliderValueRain")
+    }
+    
     @IBAction func updateIndex(sender: AnyObject) {
         rainPreferenceValue = Int(rainPreference.value)
         cloudPreferenceValue = Int(cloudPreference.value)
         temperaturePreferenceValue = Int(temperaturePreference.value)
-        NSUserDefaults.standardUserDefaults().setObject(rainPreferenceValue, forKey: "rainPreference")
-        NSUserDefaults.standardUserDefaults().setObject(cloudPreferenceValue, forKey: "cloudPreference")
-        NSUserDefaults.standardUserDefaults().setObject(temperaturePreferenceValue, forKey: "temperaturePreference")
+        NSUserDefaults.standardUserDefaults().setInteger(rainPreferenceValue!, forKey: "rainPreference")
+        NSUserDefaults.standardUserDefaults().setInteger(cloudPreferenceValue!, forKey: "cloudPreference")
+        NSUserDefaults.standardUserDefaults().setInteger(temperaturePreferenceValue!, forKey: "temperaturePreference")
         //let ViewController1: ViewController = ViewController()
         //self.presentViewController(ViewController1, animated: true, completion: nil)
     }
      
     override func viewDidLoad() {
         super.viewDidLoad()
+        rainPreference.value = NSUserDefaults.standardUserDefaults().floatForKey("rainPreference")
+        cloudPreference.value = NSUserDefaults.standardUserDefaults().floatForKey("cloudPreference")
+        temperaturePreference.value = NSUserDefaults.standardUserDefaults().floatForKey("temperaturePreference")
     }
     
     override func didReceiveMemoryWarning() {

@@ -17,14 +17,14 @@ class MoodCalculator {
     var moodPhrase: String = ""
     
     func calculateMood(date: String, precipData: Double, cloudData: Double, tempData: Double, otherFactors: [String : Int]?) -> UIImage? {
-        var rainPreference = 5
-        var cloudPreference = 5
-        var tempPreference = 5
-        if let getValue = NSUserDefaults.standardUserDefaults().objectForKey("rainPreference") {
-            rainPreference = Int(NSUserDefaults.standardUserDefaults().objectForKey("rainPreference") as! NSNumber!)
-            cloudPreference = Int(NSUserDefaults.standardUserDefaults().objectForKey("cloudPreference") as! NSNumber!)
-            tempPreference = Int(NSUserDefaults.standardUserDefaults().objectForKey("temperaturePreference") as! NSNumber!)
-        }
+        //var rainPreference = 5
+        //var cloudPreference = 5
+        //var tempPreference = 5
+        //if let getValue = NSUserDefaults.standardUserDefaults().objectForKey("rainPreference") {
+            let rainPreference = NSUserDefaults.standardUserDefaults().integerForKey("rainPreference")
+            let cloudPreference = NSUserDefaults.standardUserDefaults().integerForKey("cloudPreference")
+            let tempPreference = NSUserDefaults.standardUserDefaults().integerForKey("temperaturePreference")
+        //}
         
         if let otherFactorsData = otherFactors {
             let numberOfOtherFactors = otherFactorsData.count
@@ -115,7 +115,7 @@ class MoodCalculator {
         }
         else if (baseIndex == (sections*2)) {
             moodPhrase = "neutral"
-            return UIImage(named: "neutral-resizes.png")!
+            return UIImage(named: "neutral-resized.png")!
         }
         else if (baseIndex <= (sections*3)) {
             moodPhrase = "happy"
