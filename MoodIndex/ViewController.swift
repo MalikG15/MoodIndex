@@ -22,6 +22,8 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
     
     let locationManager = CLLocationManager()
     
+    var selectedRow: NSIndexPath?
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 7;
     }
@@ -84,11 +86,8 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let temperaturePreference = NSUserDefaults.standardUserDefaults().objectForKey("temperaturePreference")
-        
-        
         // Ask for Authorisation from the User.
-        self.locationManager.requestAlwaysAuthorization()
+        //self.locationManager.requestAlwaysAuthorization()
         
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
@@ -96,7 +95,7 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestAlwaysAuthorization()
+            locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
         }
         
@@ -112,6 +111,19 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
         }
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedRow = indexPath
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if (segue.identifier == "MoreVariables") {
+            var svc: MoreVariablesController = segue!.destinationViewController as MoreVariablesController
+            
+            svc.toPass = "hi"
+            
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -14,11 +14,11 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Mood Calculated" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5F-v2-uCB">
-                                <rect key="frame" x="133" y="351" width="335" height="164"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Your Mood Calculated" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5F-v2-uCB">
+                                <rect key="frame" x="20" y="483" width="335" height="164"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="335" id="dzy-fB-M6R"/>
                                     <constraint firstAttribute="height" constant="164" id="ufc-pZ-MZq"/>
@@ -27,18 +27,29 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="😬😀😁😂😆😅😄😃😇😉😊🙂😌😋☺️🙃😍😘😗😙😛😜😝😚🤑🤓😎🤗😏😶😐😑😒🙄🤔😳😞😟😠😡😕🙁☹️😣😖😫😩😤😮😱😨😰😯😨😰😯😦😧😓😪" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IpN-Mc-p70">
-                                <rect key="frame" x="180" y="222" width="240" height="101.5"/>
-                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="very-happy-resized.png" translatesAutoresizingMaskIntoConstraints="NO" id="Oan-aI-udE">
+                                <rect key="frame" x="8" y="284" width="114" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="7Dd-n9-8cj"/>
-                                    <constraint firstAttribute="height" constant="101.5" id="Bza-g4-uI0"/>
+                                    <constraint firstAttribute="width" constant="114" id="KnV-nS-LAq"/>
+                                    <constraint firstAttribute="height" constant="100" id="s0L-Jn-cuz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Mood Index" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeV-T8-vEv">
-                                <rect key="frame" x="133" y="20" width="335" height="177"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="neutral-resized.png" translatesAutoresizingMaskIntoConstraints="NO" id="h5q-Gt-lAu">
+                                <rect key="frame" x="130" y="284" width="114" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="YUZ-30-gOR"/>
+                                    <constraint firstAttribute="height" constant="100" id="hIY-7z-EFf"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="very-sad-resized.png" translatesAutoresizingMaskIntoConstraints="NO" id="oSm-uW-R8M">
+                                <rect key="frame" x="252" y="284" width="114" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="b7b-hh-94d"/>
+                                    <constraint firstAttribute="width" constant="114" id="nuV-Pf-FCa"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="The Mood Index" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeV-T8-vEv">
+                                <rect key="frame" x="20" y="20" width="335" height="244"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="335" id="CoX-At-bPf"/>
                                     <constraint firstAttribute="height" constant="177" id="X0e-U4-hZM"/>
@@ -51,19 +62,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IpN-Mc-p70" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6tV-fk-mAx"/>
-                            <constraint firstItem="IpN-Mc-p70" firstAttribute="top" secondItem="JeV-T8-vEv" secondAttribute="bottom" constant="25" id="Pfu-a5-KOi"/>
+                            <constraint firstItem="G5F-v2-uCB" firstAttribute="top" secondItem="h5q-Gt-lAu" secondAttribute="bottom" constant="8" id="84P-id-CIZ"/>
+                            <constraint firstItem="G5F-v2-uCB" firstAttribute="top" secondItem="Oan-aI-udE" secondAttribute="bottom" constant="8" id="LHW-Jf-438"/>
                             <constraint firstItem="G5F-v2-uCB" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="TUh-Qw-v5Y"/>
                             <constraint firstItem="JeV-T8-vEv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="UAq-nE-B7y"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="G5F-v2-uCB" secondAttribute="bottom" constant="85" id="UFZ-QN-RGC"/>
-                            <constraint firstItem="G5F-v2-uCB" firstAttribute="top" secondItem="IpN-Mc-p70" secondAttribute="bottom" constant="27.5" id="ieT-WL-tV5"/>
+                            <constraint firstItem="G5F-v2-uCB" firstAttribute="top" secondItem="oSm-uW-R8M" secondAttribute="bottom" constant="8" id="V1f-07-cga"/>
                             <constraint firstItem="JeV-T8-vEv" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="yb6-s8-Mpx"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-235" y="104"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="neutral-resized.png" width="256" height="256"/>
+        <image name="very-happy-resized.png" width="256" height="256"/>
+        <image name="very-sad-resized.png" width="256" height="256"/>
+    </resources>
 </document>

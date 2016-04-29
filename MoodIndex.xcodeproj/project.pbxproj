@@ -19,6 +19,7 @@
 		885697621CD33038005FCB34 /* very-happy-resized.png in Resources */ = {isa = PBXBuildFile; fileRef = 885697611CD33038005FCB34 /* very-happy-resized.png */; };
 		885697641CD3303D005FCB34 /* very-sad-resized.png in Resources */ = {isa = PBXBuildFile; fileRef = 885697631CD3303D005FCB34 /* very-sad-resized.png */; };
 		885697661CD330E6005FCB34 /* sad-resized.png in Resources */ = {isa = PBXBuildFile; fileRef = 885697651CD330E6005FCB34 /* sad-resized.png */; };
+		8856976A1CD34C66005FCB34 /* MoreVariablesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885697691CD34C66005FCB34 /* MoreVariablesController.swift */; };
 		885E81EA1CCC033B00ED2E74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E81E91CCC033B00ED2E74 /* AppDelegate.swift */; };
 		885E81EC1CCC033B00ED2E74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E81EB1CCC033B00ED2E74 /* ViewController.swift */; };
 		885E81EF1CCC033B00ED2E74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 885E81ED1CCC033B00ED2E74 /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		885697611CD33038005FCB34 /* very-happy-resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "very-happy-resized.png"; path = "../../../very-happy-resized.png"; sourceTree = "<group>"; };
 		885697631CD3303D005FCB34 /* very-sad-resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "very-sad-resized.png"; path = "../../../very-sad-resized.png"; sourceTree = "<group>"; };
 		885697651CD330E6005FCB34 /* sad-resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sad-resized.png"; path = "../../../sad-resized.png"; sourceTree = "<group>"; };
+		885697691CD34C66005FCB34 /* MoreVariablesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreVariablesController.swift; sourceTree = "<group>"; };
 		885E81E61CCC033B00ED2E74 /* MoodIndex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodIndex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		885E81E91CCC033B00ED2E74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		885E81EB1CCC033B00ED2E74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				885697391CD15592005FCB34 /* Weather.swift */,
 				885697491CD28601005FCB34 /* PreferencesController.swift */,
 				8856974B1CD2CD3E005FCB34 /* MoodCalculator.swift */,
+				885697691CD34C66005FCB34 /* MoreVariablesController.swift */,
 			);
 			path = MoodIndex;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				8856974A1CD28601005FCB34 /* PreferencesController.swift in Sources */,
 				885E81EC1CCC033B00ED2E74 /* ViewController.swift in Sources */,
 				8856973A1CD15592005FCB34 /* Weather.swift in Sources */,
+				8856976A1CD34C66005FCB34 /* MoreVariablesController.swift in Sources */,
 				885E81EA1CCC033B00ED2E74 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

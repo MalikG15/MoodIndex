@@ -6,6 +6,39 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--AddMoreVariables-->
+        <scene sceneID="EnL-TW-yAN">
+            <objects>
+                <viewController title="AddMoreVariables" id="TQ0-Pc-e46" customClass="MoreVariablesController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pv4-r1-WEe"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sgu-mv-MWC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7sC-p9-Kfp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xU3-sM-wGj">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Add More Variables" id="OTR-kb-SIz">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="DmH-0e-URl">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="TXC-SN-xM5"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ovc-AB-h2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3049" y="-379"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -49,6 +82,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="TQ0-Pc-e46" kind="show" identifier="MoreVariables" id="DqP-1T-sCO"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -213,6 +249,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xLX-MT-NHo"/>
+        <segue reference="TXC-SN-xM5"/>
     </inferredMetricsTieBreakers>
 </document>
