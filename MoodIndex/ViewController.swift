@@ -52,13 +52,13 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
                     imageForWeather.image = weatherData.imageForWeather(weatherData.cloudData[indexPath.row], precipPossibility:weatherData.precipData[indexPath.row])
                 }
                 if let weatherDescription = cell.viewWithTag(101) as? UILabel {
-                    weatherDescription.text = weatherData.wordForWeather(weatherData.tempData[indexPath.row])
+                    weatherDescription.text = "The temperature is going to be \(weatherData.wordForWeather(weatherData.tempData[indexPath.row])!)"
                 }
                 if let moodPicture = cell.viewWithTag(102) as? UIImageView {
                     moodPicture.image = calculator.calculateMood(tableDate, precipData: weatherData.precipData[indexPath.row], cloudData: weatherData.cloudData[indexPath.row], tempData: weatherData.tempData[indexPath.row], otherFactors: nil)
                 }
                 if let moodDescription = cell.viewWithTag(103) as? UILabel {
-                    moodDescription.text = tableDate
+                    moodDescription.text = "Your mood on \(tableDate) is \(calculator.moodPhrase)"
                 }
             }
             else {

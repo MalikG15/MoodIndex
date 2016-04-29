@@ -36,9 +36,6 @@ class Weather {
                                     print("JSON not available to be parsed.")
                                     return
                             }
-                            //print(String(dailyDataforDay["precipProbability"]!))
-                            //print(String(dailyDataforDay["cloudCover"]!))
-                            //print(String(dailyDataforDay["apparentTemperatureMax"]!))
                             self.tempData.append(dailyDataforDay["apparentTemperatureMax"] as! Double!)
                             self.cloudData.append(dailyDataforDay["cloudCover"] as! Double!)
                             self.precipData.append(dailyDataforDay["precipProbability"] as! Double!)
@@ -71,16 +68,16 @@ class Weather {
     
     func wordForWeather(temp: Double) -> String? {
         if (temp < 25) {
-            return "Very Cold"
+            return "very cold"
         }
         else if (temp < 50) {
-            return "Cold"
+            return "cold"
         }
         else if (temp <= 80) {
-            return "Warm"
+            return "warm"
         }
         else {
-            return "Hot"
+            return "hot"
         }
     }
 }

@@ -14,14 +14,7 @@ class MoodCalculator {
     
     var mood = [String : Int]()
     var baseIndex: Int = 30
-
-    /*init(precipPreference: Int, cloudPreference: Int, tempPreference: Int, otherFactors: [String : Int]?) {
-       //if ()
-    }*/
-    
-    //init() {
-        
-    //}
+    var moodPhrase: String = ""
     
     func calculateMood(date: String, precipData: Double, cloudData: Double, tempData: Double, otherFactors: [String : Int]?) -> UIImage? {
         var rainPreference = 5
@@ -113,18 +106,23 @@ class MoodCalculator {
         mood[date] = baseIndex
         
         if (baseIndex <= sections) {
+            moodPhrase = "very sad"
             return UIImage(named: "very-sad-resized.png")!
         }
         else if (baseIndex < (sections*2)) {
+            moodPhrase = "sad"
             return UIImage(named: "sad-resized.png")!
         }
         else if (baseIndex == (sections*2)) {
+            moodPhrase = "neutral"
             return UIImage(named: "neutral-resizes.png")!
         }
         else if (baseIndex <= (sections*3)) {
+            moodPhrase = "happy"
             return UIImage(named: "happy-resized.png")!
         }
         else {
+            moodPhrase = "very happy"
             return UIImage(named: "very-happy-resized.png")!
         }
     }
