@@ -18,7 +18,7 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
     var long: CLLocationDegrees = 0.0
     
     var weather: Weather?
-    
+    var calculator: MoodCalculator = MoodCalculator()
     
     let locationManager = CLLocationManager()
     
@@ -33,7 +33,7 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
         
         //var next7DaysDates = [String]()
         
-        var calculator: MoodCalculator = MoodCalculator()
+        //var calculator: MoodCalculator = MoodCalculator()
         
         let date = NSDate()
         let calendar = NSCalendar.currentCalendar()
@@ -60,15 +60,8 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
                 if let moodDescription = cell.viewWithTag(103) as? UILabel {
                     moodDescription.text = tableDate
                 }
-            /*else {
-                print("NOOO")
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    tableView.reloadData()
-                })
-            }*/
             }
             else {
-                print("NOOO")
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     tableView.reloadData()
                 })
@@ -76,7 +69,6 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
             
         }
         else {
-            print("HIII")
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 tableView.reloadData()
             })
@@ -93,11 +85,6 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
         super.viewDidLoad()
         
         //let temperaturePreference = NSUserDefaults.standardUserDefaults().objectForKey("temperaturePreference")
-        
-        /*if (temperaturePreference == nil) {
-            let ViewController1: PreferencesController = PreferencesController()
-            self.presentViewController(ViewController1, animated: true, completion: nil)
-        }*/
         
         
         // Ask for Authorisation from the User.

@@ -58,13 +58,13 @@ class Weather {
     
     func imageForWeather(cloudCover: Double, precipPossibility: Double) -> UIImage? {
         if (precipPossibility >= 0.5) {
-            return UIImage(named: "rain.png")
+            return UIImage(named: "rain-resized.png")
         }
         else if (cloudCover < 0.5) {
-            return UIImage(named: "sun.png")
+            return UIImage(named: "sun-resized.png")
         }
         else if (cloudCover >=  0.5) {
-            return UIImage(named: "bad-weather.png")
+            return UIImage(named: "cloudy-resized.png")
         }
         return nil
     }

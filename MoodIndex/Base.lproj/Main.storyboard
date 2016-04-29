@@ -30,7 +30,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voN-aD-BLc">
-                                                    <rect key="frame" x="95" y="8" width="65" height="21"/>
+                                                    <rect key="frame" x="90" y="8" width="70" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -38,15 +38,15 @@
                                                 <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="idZ-Xu-R2O">
                                                     <rect key="frame" x="8" y="0.0" width="79" height="79.5"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" tag="102" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="92e-zy-3K1">
-                                                    <rect key="frame" x="168" y="0.0" width="88" height="79.5"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mood" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqu-A8-6D3">
                                                     <rect key="frame" x="264" y="0.0" width="86" height="79.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" tag="102" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="92e-zy-3K1">
+                                                    <rect key="frame" x="168" y="-1" width="88" height="79.5"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="-2325.5" y="-384.5"/>
         </scene>
-        <!--Preferences Controller-->
+        <!--WeatherPreferences-->
         <scene sceneID="a4I-Vx-u7V">
             <objects>
-                <viewController id="26g-ay-QmF" customClass="PreferencesController" customModule="MoodIndex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="WeatherPreferences" id="26g-ay-QmF" customClass="PreferencesController" customModule="MoodIndex" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ckr-hA-d0B"/>
                         <viewControllerLayoutGuide type="bottom" id="IYy-pD-nkA"/>
@@ -136,6 +136,7 @@
                                 <state key="normal" title="Update Your Mood Index"/>
                                 <connections>
                                     <action selector="updateIndex:" destination="26g-ay-QmF" eventType="touchUpInside" id="kbW-9n-uCm"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="j81-Ab-Ta0"/>
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="6s8-ju-ZCd">
@@ -182,4 +183,7 @@
             <point key="canvasLocation" x="-1584.5" y="-394.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xLX-MT-NHo"/>
+    </inferredMetricsTieBreakers>
 </document>

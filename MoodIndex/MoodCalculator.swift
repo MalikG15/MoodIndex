@@ -24,9 +24,14 @@ class MoodCalculator {
     //}
     
     func calculateMood(date: String, precipData: Double, cloudData: Double, tempData: Double, otherFactors: [String : Int]?) -> UIImage? {
-        let rainPreference = Int(NSUserDefaults.standardUserDefaults().objectForKey("rainPreference") as! NSNumber!)
-        let cloudPreference: Int = Int(NSUserDefaults.standardUserDefaults().objectForKey("cloudPreference") as! NSNumber!)
-        let tempPreference = Int(NSUserDefaults.standardUserDefaults().objectForKey("temperaturePreference") as! NSNumber!)
+        var rainPreference = 5
+        var cloudPreference = 5
+        var tempPreference = 5
+        if let getValue = NSUserDefaults.standardUserDefaults().objectForKey("rainPreference") {
+            rainPreference = Int(NSUserDefaults.standardUserDefaults().objectForKey("rainPreference") as! NSNumber!)
+            cloudPreference = Int(NSUserDefaults.standardUserDefaults().objectForKey("cloudPreference") as! NSNumber!)
+            tempPreference = Int(NSUserDefaults.standardUserDefaults().objectForKey("temperaturePreference") as! NSNumber!)
+        }
         
         if let otherFactorsData = otherFactors {
             let numberOfOtherFactors = otherFactorsData.count
@@ -35,101 +40,97 @@ class MoodCalculator {
             }
         }
         
-        let sections = (baseIndex/4)
+        let sections: Int = ((baseIndex * 2)/4)
         
         //Calculate Rain Data
         if (precipData > 0.5) {
             if (rainPreference < 5) {
-                baseIndex - (10 - rainPreference)
+                baseIndex = baseIndex - (10 - rainPreference)
             }
             else if (rainPreference > 5) {
-                baseIndex + rainPreference
+                baseIndex = baseIndex + rainPreference
             }
         }
         else if (precipData < 0.5) {
             if (rainPreference < 5) {
-                baseIndex + rainPreference
+                baseIndex = baseIndex + rainPreference
             }
             else if (rainPreference > 5) {
-                baseIndex - (10 - rainPreference)
+                baseIndex = baseIndex - (10 - rainPreference)
             }
         }
         
         // Calculate Cloud Data
         if (cloudData > 0.5) {
             if (cloudPreference < 5) {
-                baseIndex - (10 - cloudPreference)
+                baseIndex = baseIndex - (10 - cloudPreference)
             }
             else if (cloudPreference > 5) {
-                baseIndex + cloudPreference
+                baseIndex = baseIndex + cloudPreference
             }
         }
         else if (cloudData < 0.5) {
             if (cloudPreference < 5) {
-                baseIndex + cloudPreference
+                baseIndex = baseIndex + cloudPreference
             }
             else if (rainPreference > 5) {
-                baseIndex - (10 - cloudPreference)
+                baseIndex = baseIndex - (10 - cloudPreference)
             }
         }
         
         // Calculate Temp Data
         if (tempData > 50) {
             if (tempPreference < 5) {
-                baseIndex - (10 - tempPreference)
+                baseIndex = baseIndex - (10 - tempPreference)
             }
             else if (cloudPreference > 5) {
-                baseIndex + tempPreference
+                baseIndex = baseIndex + tempPreference
             }
         }
         else if (tempData < 50) {
             if (tempPreference < 5) {
-                baseIndex + tempPreference
+                baseIndex = baseIndex + tempPreference
             }
             else if (tempPreference > 5) {
-                baseIndex - (10 - tempPreference)
+                baseIndex = baseIndex - (10 - tempPreference)
             }
         }
+        
         
         if let otherFactorsData = otherFactors {
             let ArrayPreferences = Array(otherFactorsData.values)
             for index in 0..<ArrayPreferences.count {
                 if (ArrayPreferences[index] > 5) {
-                    baseIndex + ArrayPreferences[index]
+                    baseIndex = baseIndex + ArrayPreferences[index]
                 }
                 else {
-                    baseIndex - ArrayPreferences[index]
+                    baseIndex = baseIndex - ArrayPreferences[index]
                 }
             }
         }
         
+        
         mood[date] = baseIndex
         
         if (baseIndex <= sections) {
-            return UIImage(named: "very_sad.jpg")!
+            return UIImage(named: "very-sad-resized.png")!
         }
         else if (baseIndex < (sections*2)) {
-            return UIImage(named: "sad.jpg")!
+            return UIImage(named: "sad-resized.png")!
         }
         else if (baseIndex == (sections*2)) {
-            return UIImage(named: "neutral.jpg")!
+            return UIImage(named: "neutral-resizes.png")!
         }
         else if (baseIndex <= (sections*3)) {
-            return UIImage(named: "happy.jpg")!
+            return UIImage(named: "happy-resized.png")!
         }
         else {
-            return UIImage(named: "very_happy.jpg")!
+            return UIImage(named: "very-happy-resized.png")!
         }
-    
     }
     
     func returnMood() -> [String : Int] {
         return self.mood
     }
     
-    func checkIndexNegative(index: Int) {
-        if (index < 0) {
-            self.baseIndex = 0
-        }
-    }
 }
