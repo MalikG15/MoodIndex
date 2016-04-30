@@ -26,9 +26,9 @@ class PreferencesController: UIViewController {
         
     }*/
     
-    @IBAction func Changes(sender: UISlider) {
+    /*@IBAction func Changes(sender: UISlider) {
         NSUserDefaults.standardUserDefaults().setFloat(sender.value, forKey: "sliderValueRain")
-    }
+    }*/
     
     @IBAction func updateIndex(sender: AnyObject) {
         rainPreferenceValue = Int(rainPreference.value)
@@ -37,6 +37,7 @@ class PreferencesController: UIViewController {
         NSUserDefaults.standardUserDefaults().setInteger(rainPreferenceValue!, forKey: "rainPreference")
         NSUserDefaults.standardUserDefaults().setInteger(cloudPreferenceValue!, forKey: "cloudPreference")
         NSUserDefaults.standardUserDefaults().setInteger(temperaturePreferenceValue!, forKey: "temperaturePreference")
+        //NSUserDefaults.standardUserDefaults().setObject(sender, forKey: "setPreferences")
         //let ViewController1: ViewController = ViewController()
         //self.presentViewController(ViewController1, animated: true, completion: nil)
     }

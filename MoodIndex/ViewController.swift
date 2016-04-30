@@ -86,6 +86,10 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*if (NSUserDefaults.standardUserDefaults().objectForKey("setPreferences") == nil) {
+            self.performSegueWithIdentifier("setPreferences", sender: self)
+        }*/
+        
         // Ask for Authorisation from the User.
         //self.locationManager.requestAlwaysAuthorization()
         
@@ -113,6 +117,7 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedRow = tableView.cellForRowAtIndexPath(indexPath)
+        //Executes the segue and sends the neccesary identifier to prepareForSegue
         self.performSegueWithIdentifier("MoreVariables", sender: self)
     }
     
@@ -123,6 +128,9 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
             //let selectedCell = tableView.indexPathForSelectedRow()
             addMoreVariablesController.selectedCell = selectedRow
             
+        }
+        else if (segue!.identifier == "setPreferences") {
+            let preferencesController = segue!.destinationViewController as! PreferencesController
         }
     }
 
