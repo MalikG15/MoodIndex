@@ -173,7 +173,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7W-eZ-PKb">
                                 <rect key="frame" x="-4" y="20" width="383" height="44"/>
                                 <items>
-                                    <navigationItem title="Mood Index" id="vyA-ct-HMY">
+                                    <navigationItem title="MoodIndex" id="vyA-ct-HMY">
                                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="BVg-D4-JgV">
                                             <connections>
                                                 <segue destination="26g-ay-QmF" kind="show" id="dbo-D4-o5U"/>
