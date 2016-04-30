@@ -27,21 +27,21 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="very-happy-resized.png" translatesAutoresizingMaskIntoConstraints="NO" id="Oan-aI-udE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="very-sad.png" translatesAutoresizingMaskIntoConstraints="NO" id="Oan-aI-udE">
                                 <rect key="frame" x="8" y="284" width="114" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="114" id="KnV-nS-LAq"/>
                                     <constraint firstAttribute="height" constant="100" id="s0L-Jn-cuz"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="neutral-resized.png" translatesAutoresizingMaskIntoConstraints="NO" id="h5q-Gt-lAu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="neutral.png" translatesAutoresizingMaskIntoConstraints="NO" id="h5q-Gt-lAu">
                                 <rect key="frame" x="130" y="284" width="114" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="114" id="YUZ-30-gOR"/>
                                     <constraint firstAttribute="height" constant="100" id="hIY-7z-EFf"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="very-sad-resized.png" translatesAutoresizingMaskIntoConstraints="NO" id="oSm-uW-R8M">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="very-happy.png" translatesAutoresizingMaskIntoConstraints="NO" id="oSm-uW-R8M">
                                 <rect key="frame" x="252" y="284" width="114" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="b7b-hh-94d"/>
@@ -79,8 +79,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="neutral-resized.png" width="256" height="256"/>
-        <image name="very-happy-resized.png" width="256" height="256"/>
-        <image name="very-sad-resized.png" width="256" height="256"/>
+        <image name="neutral.png" width="512" height="512"/>
+        <image name="very-happy.png" width="512" height="512"/>
+        <image name="very-sad.png" width="512" height="512"/>
     </resources>
 </document>

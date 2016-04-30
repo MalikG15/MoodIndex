@@ -11,15 +11,15 @@
 		885697461CD279FC005FCB34 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885697451CD279FC005FCB34 /* CoreLocation.framework */; };
 		8856974A1CD28601005FCB34 /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885697491CD28601005FCB34 /* PreferencesController.swift */; };
 		8856974C1CD2CD3E005FCB34 /* MoodCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8856974B1CD2CD3E005FCB34 /* MoodCalculator.swift */; };
-		885697581CD33018005FCB34 /* cloudy-resized.png in Resources */ = {isa = PBXBuildFile; fileRef = 885697571CD33018005FCB34 /* cloudy-resized.png */; };
-		8856975A1CD3301F005FCB34 /* happy-resized.png in Resources */ = {isa = PBXBuildFile; fileRef = 885697591CD3301F005FCB34 /* happy-resized.png */; };
-		8856975C1CD33025005FCB34 /* neutral-resized.png in Resources */ = {isa = PBXBuildFile; fileRef = 8856975B1CD33025005FCB34 /* neutral-resized.png */; };
-		8856975E1CD3302A005FCB34 /* rain-resized.png in Resources */ = {isa = PBXBuildFile; fileRef = 8856975D1CD3302A005FCB34 /* rain-resized.png */; };
-		885697601CD33031005FCB34 /* sun-resized.png in Resources */ = {isa = PBXBuildFile; fileRef = 8856975F1CD33031005FCB34 /* sun-resized.png */; };
-		885697621CD33038005FCB34 /* very-happy-resized.png in Resources */ = {isa = PBXBuildFile; fileRef = 885697611CD33038005FCB34 /* very-happy-resized.png */; };
-		885697641CD3303D005FCB34 /* very-sad-resized.png in Resources */ = {isa = PBXBuildFile; fileRef = 885697631CD3303D005FCB34 /* very-sad-resized.png */; };
-		885697661CD330E6005FCB34 /* sad-resized.png in Resources */ = {isa = PBXBuildFile; fileRef = 885697651CD330E6005FCB34 /* sad-resized.png */; };
 		8856976A1CD34C66005FCB34 /* MoreVariablesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885697691CD34C66005FCB34 /* MoreVariablesController.swift */; };
+		885697731CD54853005FCB34 /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 8856976B1CD54853005FCB34 /* clouds.png */; };
+		885697741CD54853005FCB34 /* happy.png in Resources */ = {isa = PBXBuildFile; fileRef = 8856976C1CD54853005FCB34 /* happy.png */; };
+		885697751CD54853005FCB34 /* neutral.png in Resources */ = {isa = PBXBuildFile; fileRef = 8856976D1CD54853005FCB34 /* neutral.png */; };
+		885697761CD54853005FCB34 /* rain.png in Resources */ = {isa = PBXBuildFile; fileRef = 8856976E1CD54853005FCB34 /* rain.png */; };
+		885697771CD54853005FCB34 /* sad.png in Resources */ = {isa = PBXBuildFile; fileRef = 8856976F1CD54853005FCB34 /* sad.png */; };
+		885697781CD54853005FCB34 /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 885697701CD54853005FCB34 /* sun.png */; };
+		885697791CD54853005FCB34 /* very-happy.png in Resources */ = {isa = PBXBuildFile; fileRef = 885697711CD54853005FCB34 /* very-happy.png */; };
+		8856977A1CD54853005FCB34 /* very-sad.png in Resources */ = {isa = PBXBuildFile; fileRef = 885697721CD54853005FCB34 /* very-sad.png */; };
 		885E81EA1CCC033B00ED2E74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E81E91CCC033B00ED2E74 /* AppDelegate.swift */; };
 		885E81EC1CCC033B00ED2E74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E81EB1CCC033B00ED2E74 /* ViewController.swift */; };
 		885E81EF1CCC033B00ED2E74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 885E81ED1CCC033B00ED2E74 /* Main.storyboard */; };
@@ -51,15 +51,15 @@
 		885697451CD279FC005FCB34 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		885697491CD28601005FCB34 /* PreferencesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
 		8856974B1CD2CD3E005FCB34 /* MoodCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodCalculator.swift; sourceTree = "<group>"; };
-		885697571CD33018005FCB34 /* cloudy-resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cloudy-resized.png"; path = "../../../cloudy-resized.png"; sourceTree = "<group>"; };
-		885697591CD3301F005FCB34 /* happy-resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "happy-resized.png"; path = "../../../happy-resized.png"; sourceTree = "<group>"; };
-		8856975B1CD33025005FCB34 /* neutral-resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "neutral-resized.png"; path = "../../../neutral-resized.png"; sourceTree = "<group>"; };
-		8856975D1CD3302A005FCB34 /* rain-resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rain-resized.png"; path = "../../../rain-resized.png"; sourceTree = "<group>"; };
-		8856975F1CD33031005FCB34 /* sun-resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sun-resized.png"; path = "../../../sun-resized.png"; sourceTree = "<group>"; };
-		885697611CD33038005FCB34 /* very-happy-resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "very-happy-resized.png"; path = "../../../very-happy-resized.png"; sourceTree = "<group>"; };
-		885697631CD3303D005FCB34 /* very-sad-resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "very-sad-resized.png"; path = "../../../very-sad-resized.png"; sourceTree = "<group>"; };
-		885697651CD330E6005FCB34 /* sad-resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sad-resized.png"; path = "../../../sad-resized.png"; sourceTree = "<group>"; };
 		885697691CD34C66005FCB34 /* MoreVariablesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreVariablesController.swift; sourceTree = "<group>"; };
+		8856976B1CD54853005FCB34 /* clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clouds.png; path = "../../../Pics for MoodIndex/clouds.png"; sourceTree = "<group>"; };
+		8856976C1CD54853005FCB34 /* happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = happy.png; path = "../../../Pics for MoodIndex/happy.png"; sourceTree = "<group>"; };
+		8856976D1CD54853005FCB34 /* neutral.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = neutral.png; path = "../../../Pics for MoodIndex/neutral.png"; sourceTree = "<group>"; };
+		8856976E1CD54853005FCB34 /* rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rain.png; path = "../../../Pics for MoodIndex/rain.png"; sourceTree = "<group>"; };
+		8856976F1CD54853005FCB34 /* sad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sad.png; path = "../../../Pics for MoodIndex/sad.png"; sourceTree = "<group>"; };
+		885697701CD54853005FCB34 /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sun.png; path = "../../../Pics for MoodIndex/sun.png"; sourceTree = "<group>"; };
+		885697711CD54853005FCB34 /* very-happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "very-happy.png"; path = "../../../Pics for MoodIndex/very-happy.png"; sourceTree = "<group>"; };
+		885697721CD54853005FCB34 /* very-sad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "very-sad.png"; path = "../../../Pics for MoodIndex/very-sad.png"; sourceTree = "<group>"; };
 		885E81E61CCC033B00ED2E74 /* MoodIndex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodIndex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		885E81E91CCC033B00ED2E74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		885E81EB1CCC033B00ED2E74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -125,17 +125,17 @@
 		885E81E81CCC033B00ED2E74 /* MoodIndex */ = {
 			isa = PBXGroup;
 			children = (
+				8856976B1CD54853005FCB34 /* clouds.png */,
+				8856976C1CD54853005FCB34 /* happy.png */,
+				8856976D1CD54853005FCB34 /* neutral.png */,
+				8856976E1CD54853005FCB34 /* rain.png */,
+				8856976F1CD54853005FCB34 /* sad.png */,
+				885697701CD54853005FCB34 /* sun.png */,
+				885697711CD54853005FCB34 /* very-happy.png */,
+				885697721CD54853005FCB34 /* very-sad.png */,
 				885E81E91CCC033B00ED2E74 /* AppDelegate.swift */,
 				885E81EB1CCC033B00ED2E74 /* ViewController.swift */,
 				885E81ED1CCC033B00ED2E74 /* Main.storyboard */,
-				885697571CD33018005FCB34 /* cloudy-resized.png */,
-				885697591CD3301F005FCB34 /* happy-resized.png */,
-				8856975B1CD33025005FCB34 /* neutral-resized.png */,
-				8856975D1CD3302A005FCB34 /* rain-resized.png */,
-				8856975F1CD33031005FCB34 /* sun-resized.png */,
-				885697611CD33038005FCB34 /* very-happy-resized.png */,
-				885697651CD330E6005FCB34 /* sad-resized.png */,
-				885697631CD3303D005FCB34 /* very-sad-resized.png */,
 				885E81F01CCC033B00ED2E74 /* Assets.xcassets */,
 				885E81F21CCC033B00ED2E74 /* LaunchScreen.storyboard */,
 				885E81F51CCC033B00ED2E74 /* Info.plist */,
@@ -270,17 +270,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				885697581CD33018005FCB34 /* cloudy-resized.png in Resources */,
-				885697641CD3303D005FCB34 /* very-sad-resized.png in Resources */,
+				885697771CD54853005FCB34 /* sad.png in Resources */,
+				885697781CD54853005FCB34 /* sun.png in Resources */,
+				885697741CD54853005FCB34 /* happy.png in Resources */,
 				885E81F41CCC033B00ED2E74 /* LaunchScreen.storyboard in Resources */,
+				8856977A1CD54853005FCB34 /* very-sad.png in Resources */,
 				885E81F11CCC033B00ED2E74 /* Assets.xcassets in Resources */,
-				885697601CD33031005FCB34 /* sun-resized.png in Resources */,
-				885697661CD330E6005FCB34 /* sad-resized.png in Resources */,
 				885E81EF1CCC033B00ED2E74 /* Main.storyboard in Resources */,
-				8856975C1CD33025005FCB34 /* neutral-resized.png in Resources */,
-				8856975A1CD3301F005FCB34 /* happy-resized.png in Resources */,
-				8856975E1CD3302A005FCB34 /* rain-resized.png in Resources */,
-				885697621CD33038005FCB34 /* very-happy-resized.png in Resources */,
+				885697791CD54853005FCB34 /* very-happy.png in Resources */,
+				885697731CD54853005FCB34 /* clouds.png in Resources */,
+				885697761CD54853005FCB34 /* rain.png in Resources */,
+				885697751CD54853005FCB34 /* neutral.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

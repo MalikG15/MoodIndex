@@ -129,9 +129,9 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
             addMoreVariablesController.selectedCell = selectedRow
             
         }
-        else if (segue!.identifier == "setPreferences") {
+        /*else if (segue!.identifier == "setPreferences") {
             let preferencesController = segue!.destinationViewController as! PreferencesController
-        }
+        }*/
     }
 
     override func didReceiveMemoryWarning() {

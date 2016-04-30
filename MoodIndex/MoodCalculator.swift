@@ -107,23 +107,23 @@ class MoodCalculator {
         
         if (baseIndex <= sections) {
             moodPhrase = "very sad"
-            return UIImage(named: "very-sad-resized.png")!
+            return UIImage(named: "very-sad.png")!
         }
         else if (baseIndex < (sections*2)) {
             moodPhrase = "sad"
-            return UIImage(named: "sad-resized.png")!
+            return UIImage(named: "sad.png")!
         }
         else if (baseIndex == (sections*2)) {
             moodPhrase = "neutral"
-            return UIImage(named: "neutral-resized.png")!
+            return UIImage(named: "neutral.png")!
         }
         else if (baseIndex <= (sections*3)) {
             moodPhrase = "happy"
-            return UIImage(named: "happy-resized.png")!
+            return UIImage(named: "happy.png")!
         }
         else {
             moodPhrase = "very happy"
-            return UIImage(named: "very-happy-resized.png")!
+            return UIImage(named: "very-happy.png")!
         }
     }
     
