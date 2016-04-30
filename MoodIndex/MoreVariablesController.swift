@@ -11,7 +11,7 @@ import UIKit
 
 class MoreVariablesController: UIViewController {
     
-    var toPass: String?
+    var selectedCell: UITableViewCell?
 
     override func viewDidLoad() {
         super.viewDidLoad()

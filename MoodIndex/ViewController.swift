@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
     
     let locationManager = CLLocationManager()
     
-    var selectedRow: NSIndexPath?
+    var selectedRow: UITableViewCell?
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 7;
@@ -39,7 +39,7 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
         
         let date = NSDate()
         let calendar = NSCalendar.currentCalendar()
-        var numDay:Double = 24.0 * Double(indexPath.row)
+        let numDay:Double = 24.0 * Double(indexPath.row)
         //for _ in 0...6 {
             var tableDate = ""
             let moveDate = date.dateByAddingTimeInterval(60*60*numDay)
@@ -111,19 +111,20 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
         }
     }
     
-    /*func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedRow = indexPath
-    }*/
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedRow = tableView.cellForRowAtIndexPath(indexPath)
+        self.performSegueWithIdentifier("MoreVariables", sender: self)
+    }
     
     
-    /*override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject!) {
         if (segue!.identifier == "MoreVariables") {
-            let svc = segue!.destinationViewController as! MoreVariablesController
-            
-            svc.toPass = "hi"
+            let addMoreVariablesController = segue!.destinationViewController as! MoreVariablesController
+            //let selectedCell = tableView.indexPathForSelectedRow()
+            addMoreVariablesController.selectedCell = selectedRow
             
         }
-    }*/
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
