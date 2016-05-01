@@ -95,7 +95,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 tableView.reloadData()
             })
         }
-        
 
         return cell
     }
@@ -118,6 +117,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             locationManager.startUpdatingLocation()
         }
         
+        // Get the view to recognize the table
         self.moodTable.delegate = self
         self.moodTable.dataSource = self
         
