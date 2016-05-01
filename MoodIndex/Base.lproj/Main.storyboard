@@ -280,6 +280,7 @@
                         <outlet property="MoodTable" destination="Rql-dg-8TB" id="HMl-3H-qnm"/>
                         <outlet property="moodTable" destination="Rql-dg-8TB" id="io3-zH-UoN"/>
                         <segue destination="TQ0-Pc-e46" kind="show" identifier="MoreVariables" id="c6e-t4-E0U"/>
+                        <segue destination="26g-ay-QmF" kind="show" identifier="setPreferences" id="mob-ht-FNR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -476,6 +477,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="TXC-SN-xM5"/>
+        <segue reference="xLX-MT-NHo"/>
+        <segue reference="mob-ht-FNR"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -31,6 +31,7 @@ class PreferencesController: UIViewController {
         NSUserDefaults.standardUserDefaults().setInteger(rainPreferenceValue!, forKey: "rainPreference")
         NSUserDefaults.standardUserDefaults().setInteger(cloudPreferenceValue!, forKey: "cloudPreference")
         NSUserDefaults.standardUserDefaults().setInteger(temperaturePreferenceValue!, forKey: "temperaturePreference")
+        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "preferencesNotSet")
     }
      
     override func viewDidLoad() {

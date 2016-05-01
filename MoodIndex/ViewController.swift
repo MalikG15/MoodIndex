@@ -30,6 +30,37 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var otherFactors: [String : Int]?
     
+    // viewWillAppear and viewDidAppear occur before viewDidLoad
+    // Runs the function before the view appears
+    override func viewWillAppear(animated: Bool) {
+        // Get's user defaults and places it inside a variable
+        let preferences: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        
+        // By default the object will be set to true, even though it doesnt exist when
+        // app first loads up
+        let isPreferencesNotSet = preferences.objectForKey("preferencesNotSet") as? Bool
+            // If equal to true we hide the view
+            if (isPreferencesNotSet != false) {
+                self.view.hidden = true
+            // else we don't hide the view
+            } else {
+                self.view.hidden = false
+            }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        
+        let prefs: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        
+        let isPreferencesNotSet = prefs.objectForKey("preferencesNotSet") as? Bool
+        // if the preferences are not set the we perform the segue
+        if (isPreferencesNotSet != false) {
+            self.performSegueWithIdentifier("setPreferences", sender: self)
+        }
+    }
+    
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Declaring the number of rows in the table
         return 7
@@ -91,6 +122,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
         else {
+            //self.performSegueWithIdentifier("setPreferences", sender: self)
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 tableView.reloadData()
             })
@@ -101,7 +133,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         
         // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()
@@ -126,8 +157,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             // Locations is an array and the first item contains longitude and latitude information
             let userLocation:CLLocation = locations[0]
-            long = userLocation.coordinate.longitude;
-            lat = userLocation.coordinate.latitude;
+            long = userLocation.coordinate.longitude
+            lat = userLocation.coordinate.latitude
             weather = Weather(URL: "https://api.forecast.io/forecast/8fdc70a7aade55aadd377e9c1f9bc2c4/\(lat),\(long)")
     }
     
@@ -151,6 +182,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             addMoreVariablesController.selectedCell = selectedRow
             addMoreVariablesController.date = chosenDate
         }
+        //else if (segue!.identifier == "setPreferences") {
+            
+        //}
     }
 
     override func didReceiveMemoryWarning() {
