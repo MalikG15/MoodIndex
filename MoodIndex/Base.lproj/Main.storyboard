@@ -313,11 +313,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="JqG-No-Gbz"/>
                                 </constraints>
-                                <connections>
-                                    <action selector="Changes:" destination="26g-ay-QmF" eventType="touchUpOutside" id="7re-ov-Oou"/>
-                                    <action selector="saveChangedValue:" destination="26g-ay-QmF" eventType="touchUpOutside" id="MIB-e0-MVV"/>
-                                    <action selector="savedChangedValue:" destination="26g-ay-QmF" eventType="touchUpOutside" id="Tu5-YT-Bkv"/>
-                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="6nQ-10-SAJ">
                                 <rect key="frame" x="14" y="342" width="342" height="31"/>
@@ -481,6 +476,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="TXC-SN-xM5"/>
+        <segue reference="xLX-MT-NHo"/>
     </inferredMetricsTieBreakers>
 </document>
