@@ -25,7 +25,6 @@ class MoreVariablesController: UIViewController, UITableViewDelegate, UITableVie
     
     var selectedCellMoodDescription: UILabel?
     
-
     @IBOutlet weak var variableName: UITextField!
         
     @IBOutlet weak var variableRating: UISlider!
@@ -33,13 +32,11 @@ class MoreVariablesController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var eventTable: UITableView!
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("variableCell", forIndexPath: indexPath)
-        
-        //let events = NSUserDefaults.standardUserDefaults().dictionaryForKey(self.date!)!
         
         if let events = NSUserDefaults.standardUserDefaults().objectForKey(self.date!) as? NSData {
             if let eventData = NSKeyedUnarchiver.unarchiveObjectWithData(events) as? Dictionary<String, Int> {
@@ -48,7 +45,7 @@ class MoreVariablesController: UIViewController, UITableViewDelegate, UITableVie
                     for index in eventData.keys {
                         if (rowLevel == indexPath.row) {
                             labelText = index
-                            break;
+                            break
                         }
                         rowLevel += 1
                     }
@@ -63,37 +60,35 @@ class MoreVariablesController: UIViewController, UITableViewDelegate, UITableVie
                             ratingOfEvent.text = ""
                         }
                     }
-                    //savedEvents = eventData
                 }
-            else {
-                // alert the event limit for this day as been reached
-                print("You have reached the event limit for this day")
-            }
         }
-        /*else {
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                tableView.reloadData()
-            })
-            print("reloading")
-        }*/
         return cell
     }
 
     
     @IBAction func submitEvent(sender: AnyObject) {
         if (variableName.text! == "") {
-            // alert you must put an event name!
-            print("You need to type an event name")
+
+            let alert = UIAlertController(title: "Input Error", message: "You need to type an event name to submit it.", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) in
+                // Doing nothing here since I just want to warn users
+            }))
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            
             return
         }
-        else if ((variableName.text!).characters.count > 26) {
-            // alert you must put an event name!
-            print("Your event name is too long")
-            return
-        }
-        else if (events.count == 5) {
-            // alert reached limit
-            print("You have reached the event limit for today")
+        else if ((variableName.text!).characters.count > 35) {
+            
+            let alert = UIAlertController(title: "Input Error", message: "Your input is too long, please shorten it to submit it.", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) in
+                // Doing nothing here since I just want to warn users
+            }))
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            
             return
         }
         
@@ -103,7 +98,6 @@ class MoreVariablesController: UIViewController, UITableViewDelegate, UITableVie
         
         events[nameOfEvent] = ratingOfEvent
         
-        //NSUserDefaults.standardUserDefaults().setObject(events, forKey: date!)
         NSUserDefaults.standardUserDefaults().setObject(NSKeyedArchiver.archivedDataWithRootObject(events), forKey: date!)
         if let table = eventTable {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in

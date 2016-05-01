@@ -12,20 +12,19 @@ import UIKit
 
 class MoodCalculator {
     
-    var mood = [String : Int]()
-    var baseIndex: Int = 30
-    var moodPhrase: String = ""
+    var baseIndex = 30
+    var moodPhrase = ""
     
-    func calculateMood(date: String, precipData: Double, cloudData: Double, tempData: Double, otherFactors: [String : Int]?) -> UIImage? {
-        //var rainPreference = 5
-        //var cloudPreference = 5
-        //var tempPreference = 5
-        //if let getValue = NSUserDefaults.standardUserDefaults().objectForKey("rainPreference") {
+    // Passes in the weather information, and otherFactors maybe
+    func calculateMood(precipData: Double, cloudData: Double, tempData: Double, otherFactors: [String : Int]?) -> UIImage? {
+            // Retrieving the saved preferences, and when data is saved as integers or doubles, there
+            // default values is zero
             let rainPreference = NSUserDefaults.standardUserDefaults().integerForKey("rainPreference")
             let cloudPreference = NSUserDefaults.standardUserDefaults().integerForKey("cloudPreference")
             let tempPreference = NSUserDefaults.standardUserDefaults().integerForKey("temperaturePreference")
-        //}
         
+        // if otherFactors is equal to null then
+        // we increase the baseIndex
         if let otherFactorsData = otherFactors {
             let numberOfOtherFactors = otherFactorsData.count
             for _ in 0..<numberOfOtherFactors {
@@ -33,10 +32,21 @@ class MoodCalculator {
             }
         }
         
+        // Multiply by 2 and divide by 4 to get 
+        // 4 distinct sections that a mood can be
+        // placed in
+        // 0 - 15 - very sad
+        // 16 - 30 - sad
+        // 30 - neutral
+        // 30 - 45 - happy
+        // 45 - 60 - very happy
         let sections: Int = ((baseIndex * 2)/4)
         
         //Calculate Rain Data
         if (precipData > 0.5) {
+            // If there is a high probability that
+            // it will rain the baseIndex changes based on 
+            // your set preference
             if (rainPreference < 5) {
                 baseIndex = baseIndex - (10 - rainPreference)
             }
@@ -55,6 +65,9 @@ class MoodCalculator {
         
         // Calculate Cloud Data
         if (cloudData > 0.5) {
+            // If there will be a lot of clouds in the sky that
+            // the baseIndex changes based on
+            // your set preference
             if (cloudPreference < 5) {
                 baseIndex = baseIndex - (10 - cloudPreference)
             }
@@ -73,6 +86,9 @@ class MoodCalculator {
         
         // Calculate Temp Data
         if (tempData > 50) {
+            // If the temp is high            
+            // the baseIndex changes based on
+            // your set preference
             if (tempPreference < 5) {
                 baseIndex = baseIndex - (10 - tempPreference)
             }
@@ -89,7 +105,9 @@ class MoodCalculator {
             }
         }
         
-        
+        // If otherfactors exist then we change baseIndex based on that
+        // the preferences has to be greater than 5 to positively affect 
+        // mood.
         if let otherFactorsData = otherFactors {
             let ArrayPreferences = Array(otherFactorsData.values)
             for index in 0..<ArrayPreferences.count {
@@ -102,9 +120,9 @@ class MoodCalculator {
             }
         }
         
-        
-        mood[date] = baseIndex
-        
+        // Based on what quadrant baseIndex is placed in
+        // We can return the appropiate image 
+        // and get the right phrase
         if (baseIndex <= sections) {
             moodPhrase = "very sad"
             return UIImage(named: "very-sad.png")!
@@ -125,10 +143,6 @@ class MoodCalculator {
             moodPhrase = "very happy"
             return UIImage(named: "very-happy.png")!
         }
-    }
-    
-    func returnMood() -> [String : Int] {
-        return self.mood
     }
     
 }

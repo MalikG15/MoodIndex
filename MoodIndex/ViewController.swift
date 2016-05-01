@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var weather: Weather?
     var calculator: MoodCalculator = MoodCalculator()
     
+    // necessary to get the location of the user
     let locationManager = CLLocationManager()
     
     var selectedRow: UITableViewCell?
@@ -30,14 +31,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var otherFactors: [String : Int]?
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7;
+        // Declaring the number of rows in the table
+        return 7
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+        // Take off a cell that exists, which is a prototype cell with a specific identifier
         let cell = tableView.dequeueReusableCellWithIdentifier("MoodCell", forIndexPath: indexPath)
         
-        
+        // Establishing a NSDate() to calculate the next 7 days
+        // This code is ran through for each cell so no need for a loop
         let date = NSDate()
         let calendar = NSCalendar.currentCalendar()
         let numDay:Double = 24.0 * Double(indexPath.row)
@@ -47,19 +50,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             tableDate += String(calendar.component([.Day], fromDate: moveDate)) + "-"
             tableDate += String(calendar.component([.Year], fromDate: moveDate))
         
-        
+        // Retreiving the data for a specific date, which contains events for that date
         if let events = NSUserDefaults.standardUserDefaults().objectForKey(tableDate) as? NSData {
             if let eventData = NSKeyedUnarchiver.unarchiveObjectWithData(events) as? Dictionary<String, Int> {
                 otherFactors = eventData
             }
         }
         else {
+            // We only want otherFactors to have data for a specific date
+            // so it is set to nil if a there is no data for that specific
+            // date
             otherFactors = nil
         }
-        
+        // Add the tableDate to the dateArray so that it can be passed to MoreVariablesController
+        // and it corresponds with table cells
         dateArray.append(tableDate)
+        // if weather doesn't have any data, then we reload the table
         if let weatherData = self.weather {
+            // we have to wait for the array to have 7, then we know that we can load the table
             if (weatherData.cloudData.count == 7) {
+                // Adding data for a specific row by getting views with a tag
                 if let imageForWeather = cell.viewWithTag(100) as? UIImageView {
                     imageForWeather.image = weatherData.imageForWeather(weatherData.cloudData[indexPath.row], precipPossibility:weatherData.precipData[indexPath.row])
                 }
@@ -67,7 +77,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     weatherDescription.text = "The temperature is going to be \(weatherData.wordForWeather(weatherData.tempData[indexPath.row])!)"
                 }
                 if let moodPicture = cell.viewWithTag(102) as? UIImageView {
-                    moodPicture.image = calculator.calculateMood(tableDate, precipData: weatherData.precipData[indexPath.row], cloudData: weatherData.cloudData[indexPath.row], tempData: weatherData.tempData[indexPath.row], otherFactors: otherFactors)
+                    moodPicture.image = calculator.calculateMood(weatherData.precipData[indexPath.row], cloudData: weatherData.cloudData[indexPath.row], tempData: weatherData.tempData[indexPath.row], otherFactors: otherFactors)
                 }
                 if let moodDescription = cell.viewWithTag(103) as? UILabel {
                     moodDescription.text = "Your mood on \(tableDate) is \(calculator.moodPhrase)"
@@ -98,8 +108,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.locationManager.requestAlwaysAuthorization()
         
         // For use in foreground
-        //self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
         
+        // Once location is enabled we can access the information
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -113,17 +124,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if (long == 0.0 && lat == 0.0) {
+            // Locations is an array and the first item contains longitude and latitude information
             let userLocation:CLLocation = locations[0]
             long = userLocation.coordinate.longitude;
             lat = userLocation.coordinate.latitude;
-            print("locations = \(long) and \(lat)")
             weather = Weather(URL: "https://api.forecast.io/forecast/8fdc70a7aade55aadd377e9c1f9bc2c4/\(lat),\(long)")
-        }
     }
     
+    // Works in tandem with the prepareForSeque to get the table row that was selected
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // Getting the cell that was selected
         selectedRow = tableView.cellForRowAtIndexPath(indexPath)
+        // The date array has the dates in order of the cells, and I am retreving the date for that row
         chosenDate = dateArray[indexPath.row]
         //Executes the segue and sends the neccesary identifier to prepareForSegue
         self.performSegueWithIdentifier("MoreVariables", sender: self)
@@ -132,8 +144,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject!) {
         if (segue!.identifier == "MoreVariables") {
+            // Associating the segue with the MoreVariablesController
             let addMoreVariablesController = segue!.destinationViewController as! MoreVariablesController
-            //let selectedCell = tableView.indexPathForSelectedRow()
+            
+            // Passing the information to the member variables in the controller above
             addMoreVariablesController.selectedCell = selectedRow
             addMoreVariablesController.date = chosenDate
         }
