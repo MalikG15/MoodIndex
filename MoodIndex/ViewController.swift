@@ -20,37 +20,43 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var weather: Weather?
     var calculator: MoodCalculator = MoodCalculator()
     
-    var chosenDate: String = ""
-    var dateArray = [String]()
-    
     let locationManager = CLLocationManager()
     
     var selectedRow: UITableViewCell?
+    
+    var chosenDate: String = ""
+    var dateArray = [String]()
+    
+    var otherFactors: [String : Int]?
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 7;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "MoodCell")
         
         let cell = tableView.dequeueReusableCellWithIdentifier("MoodCell", forIndexPath: indexPath)
         
-        //var next7DaysDates = [String]()
-        
-        //var calculator: MoodCalculator = MoodCalculator()
         
         let date = NSDate()
         let calendar = NSCalendar.currentCalendar()
         let numDay:Double = 24.0 * Double(indexPath.row)
-        //for _ in 0...6 {
             var tableDate = ""
             let moveDate = date.dateByAddingTimeInterval(60*60*numDay)
             tableDate += String(calendar.component([.Month], fromDate: moveDate)) + "-"
             tableDate += String(calendar.component([.Day], fromDate: moveDate)) + "-"
             tableDate += String(calendar.component([.Year], fromDate: moveDate))
-            //next7DaysDates.append(tableDate)
-       // }
+        
+        
+        if let events = NSUserDefaults.standardUserDefaults().objectForKey(tableDate) as? NSData {
+            if let eventData = NSKeyedUnarchiver.unarchiveObjectWithData(events) as? Dictionary<String, Int> {
+                otherFactors = eventData
+            }
+        }
+        else {
+            otherFactors = nil
+        }
+        
         dateArray.append(tableDate)
         if let weatherData = self.weather {
             if (weatherData.cloudData.count == 7) {
@@ -61,7 +67,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     weatherDescription.text = "The temperature is going to be \(weatherData.wordForWeather(weatherData.tempData[indexPath.row])!)"
                 }
                 if let moodPicture = cell.viewWithTag(102) as? UIImageView {
-                    moodPicture.image = calculator.calculateMood(tableDate, precipData: weatherData.precipData[indexPath.row], cloudData: weatherData.cloudData[indexPath.row], tempData: weatherData.tempData[indexPath.row], otherFactors: nil)
+                    moodPicture.image = calculator.calculateMood(tableDate, precipData: weatherData.precipData[indexPath.row], cloudData: weatherData.cloudData[indexPath.row], tempData: weatherData.tempData[indexPath.row], otherFactors: otherFactors)
                 }
                 if let moodDescription = cell.viewWithTag(103) as? UILabel {
                     moodDescription.text = "Your mood on \(tableDate) is \(calculator.moodPhrase)"
@@ -80,10 +86,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             })
         }
         
- 
-        //cell.detailTextLabel?.text = next7DaysDates[indexPath.row]
-        //cell.detailTextLabel?.text = "hello"
-        
+
         return cell
     }
     
@@ -92,15 +95,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
         
         // Ask for Authorisation from the User.
-        //self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestAlwaysAuthorization()
         
         // For use in foreground
-        self.locationManager.requestWhenInUseAuthorization()
+        //self.locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestWhenInUseAuthorization()
+            locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
         }
         

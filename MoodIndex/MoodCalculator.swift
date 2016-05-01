@@ -97,7 +97,7 @@ class MoodCalculator {
                     baseIndex = baseIndex + ArrayPreferences[index]
                 }
                 else {
-                    baseIndex = baseIndex - ArrayPreferences[index]
+                    baseIndex = baseIndex - (10 - ArrayPreferences[index])
                 }
             }
         }

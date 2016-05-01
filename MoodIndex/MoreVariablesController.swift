@@ -43,7 +43,6 @@ class MoreVariablesController: UIViewController, UITableViewDelegate, UITableVie
         
         if let events = NSUserDefaults.standardUserDefaults().objectForKey(self.date!) as? NSData {
             if let eventData = NSKeyedUnarchiver.unarchiveObjectWithData(events) as? Dictionary<String, Int> {
-                if (eventData.count < 5) {
                     var rowLevel = 0
                     var labelText = ""
                     for index in eventData.keys {
@@ -57,15 +56,15 @@ class MoreVariablesController: UIViewController, UITableViewDelegate, UITableVie
                         nameOfEvent.text = labelText
                     }
                     if let ratingOfEvent = cell.viewWithTag(101) as? UILabel {
-                        if let ratingData: Int = eventData[labelText] {
+                        if let _: Int = eventData[labelText] {
                             ratingOfEvent.text = String(eventData[labelText]!)
                         }
                         else {
                             ratingOfEvent.text = ""
                         }
                     }
+                    //savedEvents = eventData
                 }
-            }
             else {
                 // alert the event limit for this day as been reached
                 print("You have reached the event limit for this day")
@@ -85,18 +84,22 @@ class MoreVariablesController: UIViewController, UITableViewDelegate, UITableVie
         if (variableName.text! == "") {
             // alert you must put an event name!
             print("You need to type an event name")
-            return;
+            return
         }
-        else if ((variableName.text!).characters.count > 16) {
+        else if ((variableName.text!).characters.count > 26) {
             // alert you must put an event name!
             print("Your event name is too long")
-            return;
+            return
+        }
+        else if (events.count == 5) {
+            // alert reached limit
+            print("You have reached the event limit for today")
+            return
         }
         
         let nameOfEvent: String = variableName.text!
         let ratingOfEvent: Int = Int(variableRating.value)
-        
-        print(ratingOfEvent)
+    
         
         events[nameOfEvent] = ratingOfEvent
         
@@ -163,6 +166,7 @@ class MoreVariablesController: UIViewController, UITableViewDelegate, UITableVie
         
         
     }
+    
     
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
