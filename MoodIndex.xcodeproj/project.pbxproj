@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8856973A1CD15592005FCB34 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885697391CD15592005FCB34 /* Weather.swift */; };
-		885697461CD279FC005FCB34 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885697451CD279FC005FCB34 /* CoreLocation.framework */; };
+		885697461CD279FC005FCB34 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885697451CD279FC005FCB34 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		8856974A1CD28601005FCB34 /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885697491CD28601005FCB34 /* PreferencesController.swift */; };
 		8856974C1CD2CD3E005FCB34 /* MoodCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8856974B1CD2CD3E005FCB34 /* MoodCalculator.swift */; };
 		8856976A1CD34C66005FCB34 /* MoreVariablesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885697691CD34C66005FCB34 /* MoreVariablesController.swift */; };

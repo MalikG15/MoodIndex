@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
     @IBOutlet weak var moodTable: UITableView!
 
@@ -19,6 +19,9 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
     
     var weather: Weather?
     var calculator: MoodCalculator = MoodCalculator()
+    
+    var chosenDate: String = ""
+    var dateArray = [String]()
     
     let locationManager = CLLocationManager()
     
@@ -48,6 +51,7 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
             tableDate += String(calendar.component([.Year], fromDate: moveDate))
             //next7DaysDates.append(tableDate)
        // }
+        dateArray.append(tableDate)
         if let weatherData = self.weather {
             if (weatherData.cloudData.count == 7) {
                 if let imageForWeather = cell.viewWithTag(100) as? UIImageView {
@@ -85,10 +89,7 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        /*if (NSUserDefaults.standardUserDefaults().objectForKey("setPreferences") == nil) {
-            self.performSegueWithIdentifier("setPreferences", sender: self)
-        }*/
+    
         
         // Ask for Authorisation from the User.
         //self.locationManager.requestAlwaysAuthorization()
@@ -102,6 +103,9 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
         }
+        
+        self.moodTable.delegate = self
+        self.moodTable.dataSource = self
         
     }
     
@@ -117,6 +121,7 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedRow = tableView.cellForRowAtIndexPath(indexPath)
+        chosenDate = dateArray[indexPath.row]
         //Executes the segue and sends the neccesary identifier to prepareForSegue
         self.performSegueWithIdentifier("MoreVariables", sender: self)
     }
@@ -127,11 +132,8 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
             let addMoreVariablesController = segue!.destinationViewController as! MoreVariablesController
             //let selectedCell = tableView.indexPathForSelectedRow()
             addMoreVariablesController.selectedCell = selectedRow
-            
+            addMoreVariablesController.date = chosenDate
         }
-        /*else if (segue!.identifier == "setPreferences") {
-            let preferencesController = segue!.destinationViewController as! PreferencesController
-        }*/
     }
 
     override func didReceiveMemoryWarning() {
